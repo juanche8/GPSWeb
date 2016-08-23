@@ -1,0 +1,170 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="SiteCMS.master.vb" Inherits="GPSWeb.SiteCMS" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>Sistema de Control Satelital de Flotas</title>
+      <link rel="stylesheet" type="text/css" media="screen" href="../css/azul/ui.jqgrid.min.css" />
+       <link href="../css/azul/jquery-ui.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="../css/main.css" type="text/css"/>
+     <script src="../scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+      <script src="../scripts/ui/jquery.ui.widget.js" type="text/javascript"></script>
+    <script src="../scripts/ui/jquery.ui.core.min.js" type="text/javascript"></script>
+    <script src="../scripts/ui/jquery.ui.dialog.min.js" type="text/javascript"></script>
+
+    <script src="../scripts/ui/jquery.ui.position.min.js" type="text/javascript"></script>
+       <div id="prueba" runat ="server" >
+          <script type="text/javascript">
+              //marco la alarma como ya vista para no volver a mostrarla
+              function mostrarAlarma() {
+                  $("#AlarmaReportada").dialog({
+                      title: '',
+                      autoOpen: true,
+                      modal: false,
+                      width: 650,
+                      height: 200,           
+                      resizable: false,
+                      autoResize: false,
+                      position: [950, 650],
+                      buttons: {
+                          Cerrar: function() {
+                              $(this).dialog('close');
+                          }
+                      }
+                  });
+              }
+              function visarAlerta(alar_id) {
+                  $.ajax({
+                      async: false,
+                      type: 'POST',
+                      url: "../Panel_control/wsDatos.asmx/visarAlarmaPanico",
+                      data: "{'alar_id': '" + alar_id + "' }",
+                      contentType: 'application/json; charset=utf-8',
+                      dataType: 'json',
+                      success: function (response) {
+                            result = response.d ? response.d : response;
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            alert(textStatus);
+                        }
+                  });
+              }
+              
+          //busco si hay alarmas no vistas para este cliente
+        function searchAlertas() {
+            var alarmas;
+            var tabla = "<table cellspacing='0' align='Center'  border='1'  style='width:100%;border-collapse:collapse;'> " +
+		                "<tr>" +
+			               "<td style='width:15%;'>Cliente</td><td style='width:10%;'>Patente</td><td style='width:25%;'>Alarma</td><td>Ubicación</td><td style='width:10%;'>Fecha</td><td style='width:10%;'>Hora</td><td style='width:10%;'>Visto</td>" +
+		                "</tr>";
+            $.ajax({
+                async: false,
+                type: 'POST',
+                url: "../Panel_Control/wsDatos.asmx/GetAlarmasPanico",
+                data: "",
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                success: function(response) {
+                     alarmas = response.d;
+                    $.each(alarmas, function(index, alarma) {
+
+                        tabla += "<tr style='font:10px Arial;'>";
+                        tabla += "<td align='left'>" + alarma.cliente + "</td><td align='left'>" + alarma.patente + "</td><td align='left'>" + alarma.alarma + "</td><td align='left'>" + alarma.ubicacion + "</td><td align='left'>" + alarma.fecha + "</td><td align='left'>" + alarma.hora + "</td>";
+                        tabla += "<td align='center'><input type='checkbox' onclick='visarAlerta(" + alarma.id + ");' />";
+                        tabla += "</tr> ";
+
+
+                    });
+
+                    // si tengo alarmas muestro la div
+                    if (alarmas.length > 0) {
+
+                        tabla += "</table>";
+                        var div = document.getElementById("Tablealarmas");
+
+                        div.innerHTML = tabla;
+                        mostrarAlarma();
+                    }
+
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert(textStatus);
+                }
+            });
+
+            setTimeout("searchAlertas()", 90000) //seteo un refresco automatico de la div que muestra las alertas
+        }
+
+       
+
+       /* $(document).ready(function() {
+            searchAlertas();
+        });*/
+//cargo el timer para que el alert de alarmas se verifique cada x tiempo
+        window.onload = function StartTimer() {
+            //your timer starting code
+            searchAlertas();
+        }
+
+      
+      </script>
+     </div>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+     <script src="../scripts/Google.js" type="text/javascript"></script>
+</head>
+<body>
+    <form id="form1" runat="server" defaultbutton="">
+   
+    <div id="masterTopMenuBox" class="block">     
+      
+        <div class="inline">
+            <div class="mainMenu">
+            <asp:HyperLink ID="HyperLink2" runat="server" CssClass="menuButton" Font-Underline="false" Text="Mapa" NavigateUrl="~/CMS/pAdminMapa.aspx"> 
+                 </asp:HyperLink>
+                <asp:HyperLink ID="mainMenu1" runat="server" CssClass="menuButton" Font-Underline="false" Text="Clientes" NavigateUrl="~/CMS/pAdminClientes.aspx"> 
+                 </asp:HyperLink>
+                  <asp:HyperLink ID="HyperLink1" runat="server" CssClass="menuButton" Font-Underline="false" Text="Moviles" NavigateUrl="~/CMS/pAdminVehiculos.aspx"> 
+                 </asp:HyperLink>
+                &nbsp;
+                 <asp:HyperLink ID="HyperLink3" runat="server" CssClass="menuButton" Font-Underline="false" Text="Modulos" NavigateUrl="~/CMS/pAdminModulos.aspx"> 
+                 </asp:HyperLink>
+                &nbsp;
+                <asp:HyperLink ID="HyperLink4" runat="server" CssClass="menuButton" Font-Underline="false" Text="Comandos" NavigateUrl="~/CMS/pComandos.aspx"> 
+                 </asp:HyperLink>
+                &nbsp;
+                <asp:HyperLink ID="mainMenu2" runat="server" CssClass="menuButton" Font-Underline="false" Text="Alarmas" NavigateUrl="~/CMS/pAdminAlarmas.aspx"> 
+              </asp:HyperLink>
+                <asp:HyperLink ID="mainMenu3" runat="server" CssClass="menuButton" Font-Underline="false" Text="Seguimiento" NavigateUrl="~/CMS/pAdminSeguimiento.aspx" > 
+             </asp:HyperLink>
+              
+                <asp:HyperLink ID="mainMenu5" runat="server" CssClass="menuButton" Font-Underline="false" Text="Marcadores" NavigateUrl="~/CMS/pAdminMarcadores.aspx" >
+               </asp:HyperLink>
+                <asp:HyperLink ID="mainMenu6" runat="server" CssClass="menuButton" Font-Underline="false" Text="Parametros" NavigateUrl="~/CMS/pAdminParametros.aspx">
+                </asp:HyperLink>
+              <asp:LinkButton ID="linkSalir" runat="server" CssClass="menuButton" Font-Underline="false" Text="Salir" OnClick="linkSalir_Click" CausesValidation="false"></asp:LinkButton>
+           
+            </div>
+        </div>
+    </div>
+   
+    <div id="master">        
+          <div id="masterContent" class="block">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+                </asp:ContentPlaceHolder>
+            </div>      
+    </div>
+      <!-- Po Up Alarmas -->
+ <!-- Po Up Alarmas -->
+  
+        <div style="display:none;width: 700px; height: 200px;overflow-y: scroll;" id="AlarmaReportada">
+             <span style="font-weight:bold;">ALERTAS REPORTADAS</span> <br />
+               <div id="Tablealarmas"> 
+               </div>
+                        
+        </div>
+    </form>
+   
+</body></html>

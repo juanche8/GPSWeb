@@ -1,0 +1,169 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+/*
+ * Custom Style Sheet - Use this file to style your content
+ */
+
+/* Layout
+----------------------------------------------------------------------------------------------------*/
+
+.custom-logo { 
+	width: 138px;
+	height: 72px;
+	background: url(../../../images/yootheme/logo.png) 0 0 no-repeat;
+	background-size: contain;
+}
+
+.margin-tb-20 { margin: 20px 0; }
+.margin-l-40 { margin-left: 40px; }
+
+
+/* Modules
+----------------------------------------------------------------------------------------------------*/
+
+/* Fixing the flickering for -webkit- browsers */
+.module { -webkit-backface-visibility: hidden; }
+
+
+/* Frontpage: Features
+----------------------------------------------------------------------------------------------------*/
+
+.frontpage-teaser1 {
+	background-image: url(../../../images/yootheme/demo/slideshow/infinite_teaser1_default.jpg);
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.frontpage-teaser2 {
+	background-image: url(../../../images/yootheme/demo/slideshow/infinite_teaser2_default.jpg);
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.frontpage-teaser3 {
+	background-image: url(../../../images/yootheme/demo/slideshow/infinite_teaser3_default.jpg);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+/* Frontpage: Features
+----------------------------------------------------------------------------------------------------*/
+
+.frontpage-features { 
+	margin-top: 30px; 
+	overflow: hidden;
+}
+
+.frontpage-features h1 {
+	margin: 20px 0 5px 0;
+	font-size: 19px;
+	line-height: 20px;
+}
+
+/* Frontpage: Check
+----------------------------------------------------------------------------------------------------*/
+
+.frontpage-check {
+	float: left;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+
+/* Frontpage: Team
+----------------------------------------------------------------------------------------------------*/
+
+.frontpage-team h1 {
+	margin: 20px 0 0 0;
+	font-size: 40px;
+	line-height: 41px;
+}
+
+.frontpage-team p {
+	margin: 10px 0 0 0;
+	font-size: 17px;
+	line-height: 22px;
+}
+
+
+/* Frontpage: Contact
+----------------------------------------------------------------------------------------------------*/
+
+ul.line.frontpage-contact > li {
+	margin: 0;
+	padding: 15px 0;
+	border-top: none;
+	background: url(../images/line_bg.png) bottom repeat-x;
+}
+
+ul.line.frontpage-contact > li:first-child { 
+	background: url(../images/line_bg.png) top repeat-x,
+				url(../images/line_bg.png) bottom repeat-x;
+}
+
+ul.line.frontpage-contact strong {
+	float: left;
+	width: 140px;
+	text-transform: uppercase;
+	color: #FFF;
+	font-weight: normal;
+}
+
+ul.line.frontpage-contact div { display: inline-block; }
+
+
+/* Frontpage: Clients
+----------------------------------------------------------------------------------------------------*/
+
+.frontpage-clients a {
+	float: left;
+	opacity: 0.5;
+	margin: 0 -1px -1px 0;
+	border: 1px solid #616a73;
+	border: 1px solid rgba(255,255,255,0.5); 
+}
+
+.frontpage-clients a:hover {
+	opacity: 1;
+	border: 1px solid #FFF;
+	background-color: rgba(255,255,255,0.05);
+}
+
+.frontpage-teaser { line-height: 0; }
+.frontpage-teaser img { 
+	display: block; 
+	line-height: 0;
+}
+
+
+/* Responsive 
+----------------------------------------------------------------------------------------------------*/
+
+/* Only Phones and Tablets (Portrait) */
+@media (max-width: 959px) {
+
+	/* Layout */
+	.margin-l-40 { margin-left: 0; }
+
+
+}
+
+/* Only Tablets (Portrait) */
+@media (min-width: 768px) and (max-width: 959px) {
+
+	/* Layout */
+	#block-bottom-b .width33 { width: 100%; }
+
+	.frontpage-features img {
+		float: none;
+		margin: auto auto 15px;
+	}
+
+	.frontpage-check.width50 { width: 100%; }
+	
+
+}

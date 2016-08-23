@@ -1,0 +1,417 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="SiteCMS2.master.vb" Inherits="GPSWeb.SiteCMS2" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+ <meta name="keywords" content="Rastreo, monitoreo, satelital, " />
+  <meta name="author" content="Super User" />
+  <meta name="description" content="Rastreo Urbano te permite tener control total sobre la ubicación en tiempo real de tu flota, recibir alarmas ante eventos como botón de panico y excesos de velocidad, y obtener la más amplia estadística de las actividades de tu flota, como kms recorridos, cantidad de paradas, promedio de velocidad, tiempos de inactividad del movil, ocupación y más" />
+
+    <title>Rastreo Urbano - Panel Adnibistracion</title>
+   
+     <link rel="icon" href="../img/icono_rastreo.png" type="image/x-icon"/>
+
+     <!-- CSS PERMANENTES -->
+<link href="../css/avl-fonts.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="../css/reset.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="../css/global.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="../css/layout.css" rel="stylesheet" type="text/css" media="screen" />
+         <link href="../css/azul/jquery-ui.css" rel="stylesheet" type="text/css" />   
+   <link href="../scripts/jquery-treeview/jquery.treeview.css" rel="stylesheet" type="text/css" />
+     <script src="../scripts/jquery-1.7.2.js" type="text/javascript"></script>
+      <script src="../scripts/ui/jquery.ui.widget.js" type="text/javascript"></script>
+    <script src="../scripts/ui/jquery.ui.core.min.js" type="text/javascr ipt"></script>
+    <script src="../scripts/ui/jquery.ui.dialog.min.js" type="text/javascript"></script>
+
+    <script src="../scripts/ui/jquery.ui.position.min.js" type="text/javascript"></script>
+    
+      <!-- The localization file we need, English in this case -->
+    <script src="../scripts/trirand/i18n/grid.locale-sp.min.js" type="text/javascript"></script>
+    <!-- The jqGrid client-side javascript -->
+    <script src="../scripts/trirand/jquery.jqGrid.min.js" type="text/javascript"></script>
+    
+    <script src="../scripts/ui/jquery.ui.tabs.min.js" type="text/javascript"></script>
+ <style type="text/css">
+     
+      .vtFooter{text-align:center}
+.vtFooter p{background:#373435;color:#D85639;border-top:1px solid #ddd;padding:1px 0;font-size:.9em;margin-bottom:0}
+.vtFooter p a{color:#D85639}
+ .ajax__calendar_container {
+    z-index: 9999;
+    }
+    
+    #contenedorPrincipal{ 
+display:none; 
+height:100%; 
+position:fixed; 
+width:100%;
+z-index: 9999;
+}
+    .c_meun {
+display: inline-block;
+vertical-align: top;
+padding-top: 5px;
+text-overflow: ellipsis;
+overflow: hidden;
+max-width: 300px;
+}
+
+   #contenedorAlarmas{ 
+display:none; 
+height:100%; 
+position:fixed; 
+width:100%;
+z-index: 9999;}
+   
+    
+        #mask
+        {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 900;
+            background-color: #000;
+            display: none;
+        }
+        #boxes .window
+        {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 500px;
+            height:360px;
+            display: none;
+            z-index: 999;
+            padding: 20px;
+        }
+        #boxes #dialog
+        {
+            width: 500px;
+            height: 360px;
+            padding: 10px;
+            background-color: #ffffff;
+        }
+    </style>
+   
+    
+         <script src="../scripts/Google.js" type="text/javascript"></script>
+           <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+ 
+    <form id="form1" runat="server" defaultbutton="">
+       <asp:ScriptManager ID="ScriptManager1" runat="server"  EnableScriptGlobalization="True">
+    </asp:ScriptManager>
+  
+  <asp:HiddenField ID="cliente" runat="server" Value="" />
+  <asp:HiddenField ID="cliente_id" runat="server" Value="" />
+   <div id="all">
+<div id="container">
+
+<div id="general">
+<div id="header" style=" width:100%; background-color:White; height:45px;">
+<div style="float:left;">
+<a href="pAdminMapa.aspx"><img  alt="Rastero Urbano" src="../images/logo-rastreo-urbano-1.jpg" height="44px" width="135px"  /></a>
+
+&nbsp;</div>
+<div style="float:left; margin-top:1%">
+<span style="color:#F60; font-size:14px;"><b>Panel Administración
+    </b></span>
+&nbsp;</div>
+  <div style="float:right; vertical-align:middle; margin-right:2%; margin-top:1%;">
+ <asp:Label ID="lblUsuario" runat="server" Text="Label"  Font-Size="12px" 
+          Font-Bold="True" ForeColor="#373435" CssClass="c_meun" Height="16px"></asp:Label>
+ &nbsp;&nbsp;<asp:LinkButton ID="linkSalir" runat="server" Font-Size="12px" Font-Bold="true" ForeColor="#F60" CssClass="button4">Salir</asp:LinkButton>
+     </div>
+ <div id="icoAlarma" style="float:right; vertical-align:bottom; margin-right:1%; margin-top:1%;background-image:url(../images/panel_campana_off.png); background-repeat:no-repeat; height:25px; width:22px; text-align:center">
+ 
+  <div style="margin-top:5px;"> <a href="#" onclick="mostrarAlarmas();" id="anclaAlarmas" style="text-decoration:none"><span id="cantAlarmas" style="color:White;">&nbsp; &nbsp;</span></a><br />
+     </div>
+     </div>
+                </div>
+</div>
+</div>
+</div>
+<div id="contenedorAlarmas" style="display:none;">
+       <div style="overflow-y: scroll; border:2px solid #373435; float:right; width: 25%; height: 300px; z-index:99; position:static; top:60px; background-color:White; vertical-align:middle; right:55px; border-radius: 2px 2px 2px 2px; display:none;" id="popalarmas">
+   <asp:timer ID="Timer1" runat="server" Interval="90000"></asp:timer>
+   <div style=" margin-left:10px;">
+   <br />
+       <asp:Label ID="Label2" runat="server" Text="Alarmas Recientes:" Font-Bold="true" ForeColor="#D85639" Font-Size="12px"></asp:Label><br /><br />
+ <!--listado Alarmas-->
+           <asp:UpdatePanel ID="UpdatePanel1" runat="server" >
+           <Triggers><asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" /></Triggers>
+           
+           <ContentTemplate>
+           <asp:DataList ID="DataListAlarma" runat="server" Width="97%">
+        <ItemTemplate>
+        <a href="#" style="text-decoration:none;" title="Ver Detalles" onclick="visarAlerta(<%# Eval("alar_id")%>);"><asp:Label ID="Label3" runat="server" Text='<%# Eval("Movil")%>'  Font-Size="12px" Font-Bold="true" ForeColor="#373435" ></asp:Label>
+        <asp:Label ID="lblUsuario2" runat="server" Text='<%# Eval("Alarma")%>'  Font-Size="12px" Font-Bold="true" ForeColor="#373435" ></asp:Label><br />
+        <asp:Label ID="Label1" runat="server" Text='<%# Eval("Fecha")%>'  Font-Size="10px" Font-Bold="true" ForeColor="#373435" ></asp:Label><br />
+          <asp:Label ID="Label4" runat="server" Text='<%# Eval("ubicacion")%>'  Font-Size="10px" Font-Bold="true" ForeColor="#373435" ></asp:Label></a>
+        <hr  style=" width:100%" />
+        </ItemTemplate>
+        </asp:DataList>
+         <asp:Label ID="lblNoData" runat="server" Text="No se Encontraron Alarmas." Font-Size="12px" Visible="false"></asp:Label>
+           </ContentTemplate>
+           </asp:UpdatePanel>
+        </div>
+        <div style="text-align:right;">
+        <br />
+        <input id="Button1" type="button" value="Cerrar" class="button2" onclick="cerrarAlarmas();" style="width:80px;"/> <br /><br />
+       </div>
+  </div>
+</div>
+
+  
+    <div id="master">        
+          <div id="masterContent" class="block">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+                </asp:ContentPlaceHolder>
+            </div>      
+    </div>
+    
+   
+   <div style="border:1px solid #808080;height:60px;" >
+<div class="navbar" style="overflow: hidden; width: 100%;background-color:#373435; float:right;">
+
+<div class="menuBar" style="width:90%;zoom:1; float:right; ">
+
+<nav id="menu_top" style="font-size:14px;">
+	<ul> 
+     <li ><a onclick="mostrarPagina('pAdminAlarmas.aspx');" href="#"><img src="../images/menu/marcador_alarma.png" alt="" /><br />Alarmas</a></li>  
+                 <li ><a onclick="mostrarPagina('pAdminClientes.aspx');" href="#"><img src="../images/menu/marcador_misgrupos.png" alt="" /><br />Clientes</a></li>           
+      
+        <li > <a onclick="mostrarPagina('pAdminVehiculos.aspx');" href="#"><img src="../images/menu/marcador_misvehiculos.png" alt="" /><br />Moviles</a> </li>  
+        
+           <li > <a onclick="mostrarPagina('pAdminSeguimiento.aspx');" href="#"><img src="../images/menu/marcador_zonas.png" alt="" /><br />Seguimientos</a></li> 
+                   
+        
+          <li ><a onclick="mostrarPagina('pAdminMarcadores.aspx');" href="#"><img src="../images/menu/marcador_misgrupos.png" alt="" /><br />Marcadores</a></li> 
+           <li > <a onclick="mostrarPagina('pAdminModulos.aspx');" href="#"><img src="../images/menu/marcador_listados.png" alt="" /><br />Modulos</a> </li>
+    <li > <a onclick="mostrarPagina('pComandos.aspx');" href="#"><img src="../images/menu/marcador_listados.png" alt="" /><br />Comandos</a> </li>  
+           <li > <a onclick="mostrarPagina('pAdminParametros.aspx');" href="#"><img src="../images/menu/marcador_listados.png" alt="" /><br />Parametros</a> </li>    
+            </ul>
+        </nav>
+  </div>  
+    </div>
+</div>
+<div style="background-color:White; height:auto; width:auto; ">        
+            <iframe scrolling="auto"  id="icontenido"  frameborder="0"
+                    src="pAdminAlarmas.aspx" height="950px" width="100%;"></iframe>
+            
+    </div>
+    
+ </form>
+        <div class="vtFooter" style="text-align:center; vertical-align:middle ">
+        <br /> <br />
+        <p style=" font-size:12px;height:60px;"><br /> <br />Copyright © 2015-2016 Rastreo Urbano SITELEC S.R.L - Powered by
+        <a href="http://www.estudiocweb.com" target="_blank" style="color:#D85639;">Estudio C Web</a></p></div>
+
+     
+ <script type="text/javascript">
+
+     function loadpopunder() {
+         var id = '#dialog';
+
+
+         //Get the screen height and width
+         var maskHeight = $(document).height();
+         var maskWidth = $(window).width();
+
+         //Set heigth and width to mask to fill up the whole screen
+         $('#mask').css({ 'width': maskWidth, 'height': maskHeight });
+
+         //transition effect		
+         $('#mask').fadeIn(1000);
+         $('#mask').fadeTo("slow", 0.8);
+
+         //Get the window height and width
+         var winH = $(window).height();
+         var winW = $(window).width();
+
+         //Set the popup window to center
+         $(id).css('top', winH / 2 - $(id).height() / 2);
+         $(id).css('left', winW / 2 - $(id).width() / 2);
+
+         //transition effect
+         $(id).fadeIn(2000);
+
+
+         //if close button is clicked
+         $('.window .close').click(function (e) {
+             //Cancel the link behavior
+             e.preventDefault();
+
+             $('#mask').hide();
+             $('.window').hide();
+         });
+
+         //if mask is clicked
+         $('#mask').click(function () {
+             $(this).hide();
+             $('.window').hide();
+         });
+     }
+
+     //marco la alarma como ya vista para no volver a mostrarla
+
+
+     function visarAlerta(alar_id) {
+         $.ajax({
+             async: false,
+             type: 'POST',
+             url: "wsDatos.asmx/visarAlarma",
+             data: "{'alar_id': '" + alar_id + "' }",
+             contentType: 'application/json; charset=utf-8',
+             dataType: 'json',
+             success: function (response) {
+                 result = response.d ? response.d : response;
+             },
+             error: function (jqXHR, textStatus, errorThrown) {
+                 alert(textStatus);
+             }
+         });
+
+         //me voy al detalle
+         cerrarAlarmas();
+         document.getElementById('icontenido').src = 'pAlarmaDetalle.aspx?alar_id=' + alar_id;
+         window.frames['icontenido'].focus();
+     }
+
+     //busco si hay alarmas no vistas para este cliente
+     function searchAlertas() {
+         var alarmas;
+
+
+         $.ajax({
+             async: false,
+             type: 'POST',
+             url: "wsDatos.asmx/GetAlarmas",
+             data: "{'cli_id': '" + document.getElementById("<%= cliente.ClientID %>").value + "' }",
+             contentType: 'application/json; charset=utf-8',
+             dataType: 'json',
+             success: function (response) {
+                 alarmas = response.d;
+                 $.each(alarmas, function (index, alarma) {
+
+                     //tengo que mostrar la cantidad de alarmas nuevas y cambiar el icono de la campana
+                     if (alarmas.length > 0) {
+                         $("#icoAlarma").css("background-image", "url(../images/panel_campana_on.png)");  //attr("src", "../images/panel_campana_on.png");
+                         $('#cantAlarmas').text(alarmas.length);
+                     }
+                     else {
+                         $("#icoAlarma").css("background-image", "url(../images/panel_campana_off.png)"); //.attr("src", "../images/panel_campana_off.png");
+                         $('#cantAlarmas').text('');
+                     }
+
+                 });
+
+                 // si tengo alarmas muestro la div
+
+
+             },
+             error: function (jqXHR, textStatus, errorThrown) {
+                 alert(textStatus);
+             }
+         });
+
+         setTimeout("searchAlertas()", 45000) //seteo un refresco automatico de la div que muestra las alertas
+     }
+
+
+
+     $(document).ready(function () {
+         searchAlertas();
+
+
+     });
+     //cargo el timer para que el alert de alarmas se verifique cada x tiempo
+     /*  window.onload = function StartTimer() {
+     //your timer starting code
+     setTimeout("searchAlertas()", 90000);
+     }*/
+
+     function verMapaA(lat, lng) {
+
+         $('<iframe id="mapaA" border="1" frameborder="1" framespacing="0" src="verMapa.aspx?lat=' + lat + '&lng=' + lng + '" />').dialog({
+
+             title: "",
+             autoOpen: true,
+             width: 500,
+             height: 350,
+             modal: true,
+             resizable: false,
+             autoResize: true,
+             position: [450, 450],
+             close: function () {
+                 $(this).dialog('destroy').remove();
+             }
+         });
+         $('#mapaA').dialog('open').width(500).height(350);
+
+     }
+
+
+
+     function mostrarAlarmas() {
+
+         $("#popalarmas").show();
+         $("#contenedorAlarmas").css("position", "absolute");
+         $("#contenedorAlarmas").show();
+
+
+     }
+
+     function cerrarAlarmas() {
+         $("#popalarmas").hide();
+
+     }
+
+     function mostrarMenu() {
+         $("#contenedorPrincipal").css("position", "absolute");
+         $("#contenedorPrincipal").show();
+         $("#MenuUser").show();
+         // document.getElementById("linkUsuario2").style.display = "inline-block";
+         // document.getElementById("linkUsuario").style.display = "none";
+     }
+
+     function cerrarMenu() {
+         $("#MenuUser").hide();
+         document.getElementById("linkUsuario").style.display = "inline-block";
+         document.getElementById("linkUsuario2").style.display = "none";
+     }
+
+     function mostrarPagina(pagina) {
+         document.getElementById('icontenido').src = pagina;
+         //window.frames['icontenido'].focus();
+         window.scrollTo(0, 900);
+
+     }
+
+     $("#contenedorPrincipal").click(function () { }, function () {
+         $("#MenuUser").css("display", "none"); // Oculta el div que se acaba de abrir al dejar de pasar el raton por encima del mismo
+
+         $("#contenedorPrincipal").hide();
+
+     });
+
+     $("#contenedorAlarmas").click(function () { }, function () {
+         $("#popalarmas").css("display", "none"); // Oculta el div que se acaba de abrir al dejar de pasar el raton por encima del mismo
+         $("#contenedorAlarmas").hide();
+
+     });
+
+     function iraLogin() {
+         // alert('redirigir');
+         location.href = "../login.aspx";
+
+     }
+      
+      </script>
+</body>
+</html>

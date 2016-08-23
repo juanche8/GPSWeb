@@ -1,0 +1,66 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site1.master.vb" Inherits="GPSWeb.Site1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>GPS-Web</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css"/>
+   <link rel="stylesheet" href="../css/main.css" type="text/css"/>
+   <link rel="icon" href="../img/icono_rastreo.ico" type="image/x-icon/">
+   
+    <asp:ContentPlaceHolder ID="head" runat="server">
+     
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="formPage" runat="server" defaultbutton="" autocomplete="off">
+ 
+    <div id="wrap">
+        <div id="content" class="clrfix">
+            <div id="cabecera">
+                <div class="MOD_NO_6">
+                <div class="f-right">
+                  <asp:Label ID="Label2" runat="server" Text="Usuario: "></asp:Label>
+                <asp:Label ID="lblUsuario" runat="server" Text="Usuario"    Font-Bold="True" 
+                        ForeColor="#367C2B" Font-Size="14px" ></asp:Label>
+                </div>
+                    <a class="logo" title="John Deere" ></a>
+                    <div id="mainNav">
+                       <div class="mainMenu">
+                <asp:HyperLink ID="mainMenu1" runat="server" CssClass="menuButton" Font-Underline="false" Text="Mapa" NavigateUrl="~/Panel_Control/pMapa.aspx" />
+                <asp:HyperLink ID="mainMenu2" runat="server" CssClass="menuButton" Font-Underline="false" Text="Alarmas" NavigateUrl="~/Panel_Control/pAlarmas.aspx" />
+                <asp:HyperLink ID="mainMenu3" runat="server" CssClass="menuButton" Font-Underline="false" Text="Recorridos" />
+                <asp:HyperLink ID="mainMenu4" runat="server" CssClass="menuButton" Font-Underline="false" Text="Seguimientos" />
+                <asp:HyperLink ID="mainMenu5" runat="server" CssClass="menuButton" Font-Underline="false" Text="Marcadores" />
+                <asp:HyperLink ID="mainMenu6" runat="server" CssClass="menuButton" Font-Underline="false" Text="Distancias" />
+                <asp:HyperLink ID="mainMenu9" runat="server" CssClass="menuButton" Font-Underline="false" Text="Historicos" />
+                <asp:HyperLink ID="mainMenu7" runat="server" CssClass="menuButton" Font-Underline="false" Text="Mis Vehiculos" />
+           
+            </div>
+                      
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="wid_100">
+                <asp:ContentPlaceHolder ID="Contenido" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="pFooter" class="salto">
+                <div class="content-center">
+                    <div class="wid_100 salto">
+                        <div class="f-left top_20">
+                            <asp:Label ID="Label1" runat="server" Text="Copyright © 2012 Derechos Reservados."
+                                CssClass="link-foot foot-Black" />
+                            <asp:HyperLink ID="HyperLink7" runat="server" Text="Términos y Condiciones" CssClass="link-foot foot-Black" />
+                            <asp:HyperLink ID="HyperLink8" runat="server" Text="Políticas de Privacidad" CssClass="link-foot foot-Black" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
+

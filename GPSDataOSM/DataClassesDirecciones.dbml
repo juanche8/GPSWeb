@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Direcciones" Class="DataClassesDireccionesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=TOSHIBA-PC\SQLEXPRESS2008;Initial Catalog=Direcciones;Integrated Security=True" SettingsObjectName="GPSDataOSM.My.MySettings" SettingsPropertyName="DireccionesConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Direcciones" Member="Direcciones">
+    <Type Name="Direccione">
+      <Column Name="dir_codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dir_latitud" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="dir_longitud" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="dir_nombre_via" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="dir_localidad" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="dir_provinica" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="dir_tipo_via" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dir_origen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

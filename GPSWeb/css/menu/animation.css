@@ -1,0 +1,180 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+/* Base
+----------------------------------------------------------------------------------------------------*/
+  
+  .button4 {
+  /*-moz-box-shadow:inset 0px 1px 0px 0px #c1ed9c;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #c1ed9c;
+  box-shadow:inset 0px 1px 0px 0px #c1ed9c;*/
+  background-color:#9dce2c;
+  -webkit-border-top-left-radius:0px;
+  -moz-border-radius-topleft:0px;
+  border-top-left-radius:0px;
+  -webkit-border-top-right-radius:0px;
+  -moz-border-radius-topright:0px;
+  border-top-right-radius:0px;
+  -webkit-border-bottom-right-radius:0px;
+  -moz-border-radius-bottomright:0px;
+  border-bottom-right-radius:0px;
+  -webkit-border-bottom-left-radius:0px;
+  -moz-border-radius-bottomleft:0px;
+  border-bottom-left-radius:0px;
+  text-indent:0px;
+  border:1px solid #9dce2c;
+  display:inline-block;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:14px;
+  font-weight:bold;
+  font-style:normal;
+  padding: 2px 2px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:0px 1px 0px #689324;
+  vertical-align: bottom;
+}.button4:hover {
+  background-color:#8cb82b;
+}.button4:active {
+  position:relative;
+  top:1px;
+}
+   
+.button3 {
+  -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+  background-color:#ededed;
+  -webkit-border-top-left-radius:0px;
+  -moz-border-radius-topleft:0px;
+  border-top-left-radius:0px;
+  -webkit-border-top-right-radius:0px;
+  -moz-border-radius-topright:0px;
+  border-top-right-radius:0px;
+  -webkit-border-bottom-right-radius:0px;
+  -moz-border-radius-bottomright:0px;
+  border-bottom-right-radius:0px;
+  -webkit-border-bottom-left-radius:0px;
+  -moz-border-radius-bottomleft:0px;
+  border-bottom-left-radius:0px;
+  text-indent:0px;
+  border:1px solid #dcdcdc;
+  display:inline-block;
+  color:#777777;
+  font-family:Arial;
+  font-size:14px;
+  font-weight:bold;
+  font-style:normal;
+  padding: 12.5px 25px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:1px 1px 0px #ffffff;
+}.button3:hover {
+  background-color:#dfdfdf;
+}.button3:active {
+  position:relative;
+  top:1px;
+}   
+   
+.button2 {
+  /*-moz-box-shadow:inset 0px 1px 0px 0px #c1ed9c;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #c1ed9c;
+  box-shadow:inset 0px 1px 0px 0px #c1ed9c;*/
+  background-color:#9dce2c;
+  -webkit-border-top-left-radius:0px;
+  -moz-border-radius-topleft:0px;
+  border-top-left-radius:0px;
+  -webkit-border-top-right-radius:0px;
+  -moz-border-radius-topright:0px;
+  border-top-right-radius:0px;
+  -webkit-border-bottom-right-radius:0px;
+  -moz-border-radius-bottomright:0px;
+  border-bottom-right-radius:0px;
+  -webkit-border-bottom-left-radius:0px;
+  -moz-border-radius-bottomleft:0px;
+  border-bottom-left-radius:0px;
+  text-indent:0px;
+  border:1px solid #689324;
+  display:inline-block;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:14px;
+  font-weight:bold;
+  font-style:normal;
+  padding: 12.5px 25px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:0px 1px 0px #689324;
+}.button2:hover {
+  background-color:#8cb82b;
+}.button2:active {
+  position:relative;
+  top:1px;
+}
+
+/* Menu
+----------------------------------------------------------------------------------------------------*/
+
+
+/* Tools
+----------------------------------------------------------------------------------------------------*/
+
+.button-primary:hover,
+.button-default:hover,
+#system .item > .links a:hover,
+form.style button:hover,
+form.style input[type='button']:hover,
+form.style input[type='submit']:hover  {
+    -o-transition: 
+      border-color 200ms ease-in-out, 
+      background 200ms ease-in-out;
+  -webkit-transition: 
+    border-color 200ms ease-in-out, 
+    background 200ms ease-in-out;
+  -moz-transition: 
+    border-color 200ms ease-in-out, 
+    background 200ms ease-in-out;
+  transition: 
+    border-color 200ms ease-in-out, 
+    background 200ms ease-in-out;    
+}
+
+#totop-scroller:hover, 
+.social-icons a:hover {
+  -o-transition: opacity 200ms ease-in-out;
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+}
+
+
+/* Widgetkit: Slideset + Slideshow
+----------------------------------------------------------------------------------------------------*/
+
+.wk-slideshow-infinite > div .next:hover,
+.wk-slideshow-infinite > div .prev:hover,
+.wk-slideset-infinite > div .next:hover,
+.wk-slideset-infinite > div .prev:hover {
+  -o-transition: opacity 200ms ease-in-out; 
+  -webkit-transition: opacity 200ms ease-in-out; 
+  -moz-transition: opacity 200ms ease-in-out; 
+  transition: opacity 200ms ease-in-out;  
+}
+
+.wk-slideshow-infinite .nav span:hover,
+.wk-slideset-infinite .nav span:hover {
+  -o-transition: opacity 200ms ease-in-out; 
+  -webkit-transition: opacity 200ms ease-in-out; 
+  -moz-transition: opacity 200ms ease-in-out; 
+  transition: opacity 200ms ease-in-out;  
+}
+
+/* Custom
+----------------------------------------------------------------------------------------------------*/
+
+.frontpage-clients a:hover {
+  -o-transition: opacity 200ms ease-in-out;
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+}

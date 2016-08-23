@@ -1,0 +1,682 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Posicionamientos" Class="DataClassesGPSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=TOSHIBA-PC\SQLEXPRESS2012;Initial Catalog=Posicionamientos;Integrated Security=True" SettingsObjectName="GPS.Data.My.MySettings" SettingsPropertyName="GPSWebConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Tipos_Marcadores" Member="Tipos_Marcadores">
+    <Type Name="Tipos_Marcadores">
+      <Column Name="tipo_marc_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tipo_marc_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tipo_marc_imagen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Tipos_Marcadores_Marcadores" Member="Marcadores" ThisKey="tipo_marc_id" OtherKey="tipo_marc_id" Type="Marcadores" />
+      <Association Name="Tipos_Marcadores_Marcadores_Generico" Member="Marcadores_Genericos" ThisKey="tipo_marc_id" OtherKey="tipo_marc_id" Type="Marcadores_Generico" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Administradores" Member="Administradores">
+    <Type Name="Administradores">
+      <Column Name="adm_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="adm_nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="adm_mail" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="adm_pass" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Marcadores" Member="Marcadores">
+    <Type Name="Marcadores">
+      <Column Name="marc_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cli_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="marc_latitud" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="marc_longitud" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tipo_marc_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="marc_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="marc_direccion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Association Name="Tipos_Marcadores_Marcadores" Member="Tipos_Marcadores" ThisKey="tipo_marc_id" OtherKey="tipo_marc_id" Type="Tipos_Marcadores" IsForeignKey="true" />
+      <Association Name="Cliente_Marcadores" Member="Cliente" ThisKey="cli_id" OtherKey="cli_id" Type="Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Clientes_Particulares" Member="Clientes_Particulares">
+    <Type Name="Clientes_Particulares">
+      <Column Name="part_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cli_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="part_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="part_apellido" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="part_domicilio" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="part_telefono_1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="part_telefono_2" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="part_telefono_3" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Cliente_Clientes_Particulares" Member="Cliente" ThisKey="cli_id" OtherKey="cli_id" Type="Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipos_Clientes" Member="Tipos_Clientes">
+    <Type Name="Tipos_Clientes">
+      <Column Name="tipo_cli_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tipo_cli_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Tipos_Clientes_Cliente" Member="Clientes" ThisKey="tipo_cli_id" OtherKey="tipo_cli_id" Type="Cliente" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Marcadores_GenericosXClientes" Member="Marcadores_GenericosXClientes">
+    <Type Name="Marcadores_GenericosXClientes">
+      <Column Name="marc_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cli_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Marcadores_Generico_Marcadores_GenericosXClientes" Member="Marcadores_Generico" ThisKey="marc_id" OtherKey="marc_id" Type="Marcadores_Generico" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Clientes_Empresas" Member="Clientes_Empresas">
+    <Type Name="Clientes_Empresas">
+      <Column Name="empr_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="empr_razon_social" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="empr_CUIT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="empr_Domicilio" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="empr_CP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="empr_telefono_1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="empr_telefono_2" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cli_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Cliente_Clientes_Empresas" Member="Cliente" ThisKey="cli_id" OtherKey="cli_id" Type="Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipos_Vias" Member="Tipos_Vias">
+    <Type Name="Tipos_Vias">
+      <Column Name="tipo_via_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tipo_via_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Contactos_Clientes" Member="Contactos_Clientes">
+    <Type Name="Contactos_Clientes">
+      <Column Name="cont_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cli_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cont_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cont_apellido" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cont_telefono_1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cont_telefono_2" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Cliente_Contactos_Clientes" Member="Cliente" ThisKey="cli_id" OtherKey="cli_id" Type="Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Parametros" Member="Parametros">
+    <Type Name="Parametros">
+      <Column Name="par_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="par_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="par_valor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Zonas_Puntos" Member="Zonas_Puntos">
+    <Type Name="Zonas_Puntos">
+      <Column Name="zon_punto_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="zon_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="zon_latitud" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="zon_longitud" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Zonas_Zonas_Puntos" Member="Zonas" ThisKey="zon_id" OtherKey="zon_id" Type="Zonas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Zonas" Member="Zonas">
+    <Type Name="Zonas">
+      <Column Name="zon_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="zon_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cli_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Zonas_Zonas_Puntos" Member="Zonas_Puntos" ThisKey="zon_id" OtherKey="zon_id" Type="Zonas_Puntos" />
+      <Association Name="Zonas_Alertas_Zonas" Member="Alertas_Zonas" ThisKey="zon_id" OtherKey="zon_id" Type="Alertas_Zonas" />
+      <Association Name="Cliente_Zonas" Member="Cliente" ThisKey="cli_id" OtherKey="cli_id" Type="Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alertas_Zonas" Member="Alertas_Zonas">
+    <Type Name="Alertas_Zonas">
+      <Column Name="azon_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="azon_enviar_sms" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="azon_enviar_mail" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="azon_tipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="azon_fecha_desde" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="azon_fecha_hasta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="azon_umbral_desvio" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="zon_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="veh_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="azon_activa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Alertas_Zonas_Alertas_Zonas_Frecuencias" Member="Alertas_Zonas_Frecuencias" ThisKey="azon_id" OtherKey="zon_id" Type="Alertas_Zonas_Frecuencias" />
+      <Association Name="Zonas_Alertas_Zonas" Member="Zonas" ThisKey="zon_id" OtherKey="zon_id" Type="Zonas" IsForeignKey="true" />
+      <Association Name="Vehiculo_Alertas_Zonas" Member="Vehiculo" ThisKey="veh_id" OtherKey="veh_id" Type="Vehiculo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alertas_Zonas_Frecuencias" Member="Alertas_Zonas_Frecuencias">
+    <Type Name="Alertas_Zonas_Frecuencias">
+      <Column Name="zon_frec_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="zon_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="zon_dia_semana" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="zon_hora_desde" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="zon_hora_hasta" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Association Name="Alertas_Zonas_Alertas_Zonas_Frecuencias" Member="Alertas_Zonas" ThisKey="zon_id" OtherKey="azon_id" Type="Alertas_Zonas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alertas_Recorridos_Frecuencias" Member="Alertas_Recorridos_Frecuencias">
+    <Type Name="Alertas_Recorridos_Frecuencias">
+      <Column Name="rec_frec_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="rec_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rec_dia_semana" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rec_hora_desde" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="rec_hora_hasta" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Association Name="Alertas_Recorridos_Alertas_Recorridos_Frecuencias" Member="Alertas_Recorridos" ThisKey="rec_id" OtherKey="arec_id" Type="Alertas_Recorridos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alertas_Direcciones_Frecuencia" Member="Alertas_Direcciones_Frecuencia">
+    <Type Name="Alertas_Direcciones_Frecuencia">
+      <Column Name="dir_frec_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dir_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dir_dia_semana" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dir_frec_hora_desde" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="dir_frec_hora_hasta" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Association Name="Alertas_Direcciones_Alertas_Direcciones_Frecuencia" Member="Alertas_Direcciones" ThisKey="dir_id" OtherKey="adir_id" Type="Alertas_Direcciones" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Recorridos" Member="Recorridos">
+    <Type Name="Recorridos">
+      <Column Name="rec_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="rec_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cli_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rec_origen" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="rec_destino" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Recorridos_Alertas_Recorridos" Member="Alertas_Recorridos" ThisKey="rec_id" OtherKey="rec_id" Type="Alertas_Recorridos" />
+      <Association Name="Recorridos_Recorridos_Puntos" Member="Recorridos_Puntos" ThisKey="rec_id" OtherKey="rec_id" Type="Recorridos_Puntos" />
+      <Association Name="Cliente_Recorridos" Member="Cliente" ThisKey="cli_id" OtherKey="cli_id" Type="Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alertas_Recordatorios_Por_Fechas" Member="Alertas_Recordatorios_Por_Fechas">
+    <Type Name="Alertas_Recordatorios_Por_Fechas">
+      <Column Name="recf_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="recf_descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="recf_periocidad" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="recf_proxima_ocurrencia" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="recf_notificar_sms" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="recf_notificar_mail" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="veh_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Vehiculo_Alertas_Recordatorios_Por_Fechas" Member="Vehiculo" ThisKey="veh_id" OtherKey="veh_id" Type="Vehiculo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alarmas_Velocidad" Member="Alarmas_Velocidad">
+    <Type Name="Alarmas_Velocidad">
+      <Column Name="vel_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="vel_descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="vel_unidadmedida" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="vel_valor_por_defecto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vel_tipo_via" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Alarmas_Velocidad_Alertas_Velocidad_Configuradas" Member="Alertas_Velocidad_Configuradas" ThisKey="vel_id" OtherKey="vel_id" Type="Alertas_Velocidad_Configuradas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alertas_Velocidad_Configuradas" Member="Alertas_Velocidad_Configuradas">
+    <Type Name="Alertas_Velocidad_Configuradas">
+      <Column Name="ale_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="veh_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vel_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ale_fecha_creacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ale_valor_maximo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ale_enviar_SMS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ale_enviar_mail" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Alarmas_Velocidad_Alertas_Velocidad_Configuradas" Member="Alarmas_Velocidad" ThisKey="vel_id" OtherKey="vel_id" Type="Alarmas_Velocidad" IsForeignKey="true" />
+      <Association Name="Vehiculo_Alertas_Velocidad_Configuradas" Member="Vehiculo" ThisKey="veh_id" OtherKey="veh_id" Type="Vehiculo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Direcciones" Member="Direcciones">
+    <Type Name="Direcciones">
+      <Column Name="dir_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dir_direccion" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="dir_latitud" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="dir_longitud" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cli_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dir_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Direcciones_Alertas_Direcciones" Member="Alertas_Direcciones" ThisKey="dir_id" OtherKey="dir_id" Type="Alertas_Direcciones" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alertas_Direcciones" Member="Alertas_Direcciones">
+    <Type Name="Alertas_Direcciones">
+      <Column Name="adir_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="adir_tipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="adir_enviar_mail" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="adir_enviar_sms" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="adir_fecha_desde" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="adir_fecha_hasta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="adir_umbral_desvio" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="veh_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dir_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="adir_activa" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Alertas_Direcciones_Alertas_Direcciones_Frecuencia" Member="Alertas_Direcciones_Frecuencia" ThisKey="adir_id" OtherKey="dir_id" Type="Alertas_Direcciones_Frecuencia" />
+      <Association Name="Direcciones_Alertas_Direcciones" Member="Direcciones" ThisKey="dir_id" OtherKey="dir_id" Type="Direcciones" IsForeignKey="true" />
+      <Association Name="Vehiculo_Alertas_Direcciones" Member="Vehiculo" ThisKey="veh_id" OtherKey="veh_id" Type="Vehiculo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipos_Usos_Moviles" Member="Tipos_Usos_Moviles">
+    <Type Name="Tipos_Usos_Moviles">
+      <Column Name="tipo_uso_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tipo_uso_descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Tipos_Usos_Moviles_Vehiculo" Member="Vehiculos" ThisKey="tipo_uso_id" OtherKey="tip_uso_id" Type="Vehiculo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sensores_Configurados" Member="Sensores_Configurados">
+    <Type Name="Sensores_Configurados">
+      <Column Name="sen_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="veh_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sen_enviar_mail" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Sensores_Sensores_Configurados" Member="Sensores" ThisKey="sen_id" OtherKey="sen_id" Type="Sensores" IsForeignKey="true" />
+      <Association Name="Vehiculo_Sensores_Configurados" Member="Vehiculo" ThisKey="veh_id" OtherKey="veh_id" Type="Vehiculo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sensores_Moviles" Member="Sensores_Moviles">
+    <Type Name="Sensores_Moviles">
+      <Column Name="sen_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="veh_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="enviar_sms" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Sensores_Sensores_Moviles" Member="Sensores" ThisKey="sen_id" OtherKey="sen_id" Type="Sensores" IsForeignKey="true" />
+      <Association Name="Vehiculo_Sensores_Moviles" Member="Vehiculo" ThisKey="veh_id" OtherKey="veh_id" Type="Vehiculo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sensores" Member="Sensores">
+    <Type Name="Sensores">
+      <Column Name="sen_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sen_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="sen_posicion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sen_prioridad" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="sen_binario" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="sen_valor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sen_duracion" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="sen_alarma" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Sensores_Sensores_Configurados" Member="Sensores_Configurados" ThisKey="sen_id" OtherKey="sen_id" Type="Sensores_Configurados" />
+      <Association Name="Sensores_Sensores_Moviles" Member="Sensores_Moviles" ThisKey="sen_id" OtherKey="sen_id" Type="Sensores_Moviles" />
+      <Association Name="Sensores_Comando" Member="Comandos" ThisKey="sen_id" OtherKey="sen_id" Type="Comando" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Grupos" Member="Grupos">
+    <Type Name="Grupos">
+      <Column Name="grup_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="grup_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cli_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Grupos_Grupos_Vehiculos" Member="Grupos_Vehiculos" ThisKey="grup_id" OtherKey="grup_id" Type="Grupos_Vehiculos" />
+      <Association Name="Cliente_Grupos" Member="Cliente" ThisKey="cli_id" OtherKey="cli_id" Type="Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Grupos_Vehiculos" Member="Grupos_Vehiculos">
+    <Type Name="Grupos_Vehiculos">
+      <Column Name="grup_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="veh_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Grupos_Grupos_Vehiculos" Member="Grupos" ThisKey="grup_id" OtherKey="grup_id" Type="Grupos" IsForeignKey="true" />
+      <Association Name="Vehiculo_Grupos_Vehiculos" Member="Vehiculo" ThisKey="veh_id" OtherKey="veh_id" Type="Vehiculo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipos_Vehiculos" Member="Tipos_Vehiculos">
+    <Type Name="Tipos_Vehiculos">
+      <Column Name="veh_tipo_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="veh_tipo_detalle" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="veh_tipo_icono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Tipos_Vehiculos_Vehiculo" Member="Vehiculos" ThisKey="veh_tipo_id" OtherKey="veh_tipo_id" Type="Vehiculo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Modulos_Conexiones" Member="Modulos_Conexiones">
+    <Type Name="Modulos_Conexiones">
+      <Column Name="con_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="con_fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="con_fecha_desconexion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="mod_id" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="con_terminal" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alertas_Recorridos" Member="Alertas_Recorridos">
+    <Type Name="Alertas_Recorridos">
+      <Column Name="arec_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="veh_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="arec_enviar_mail" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="arec_enviar_sms" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="arec_fecha_desde" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="arec_fecha_hasta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="arec_umbral_desvio" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="rec_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="arec_activa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="arec_no_deseado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Alertas_Recorridos_Alertas_Recorridos_Frecuencias" Member="Alertas_Recorridos_Frecuencias" ThisKey="arec_id" OtherKey="rec_id" Type="Alertas_Recorridos_Frecuencias" />
+      <Association Name="Alertas_Recorridos_Alertas_Recorrido_Puntos_Visitar" Member="Alertas_Recorrido_Puntos_Visitar" ThisKey="arec_id" OtherKey="arec_id" Type="Alertas_Recorrido_Puntos_Visitar" />
+      <Association Name="Recorridos_Alertas_Recorridos" Member="Recorridos" ThisKey="rec_id" OtherKey="rec_id" Type="Recorridos" IsForeignKey="true" />
+      <Association Name="Vehiculo_Alertas_Recorridos" Member="Vehiculo" ThisKey="veh_id" OtherKey="veh_id" Type="Vehiculo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alarmas_Fuera_Horario_Dias" Member="Alarmas_Fuera_Horario_Dias">
+    <Type Name="Alarmas_Fuera_Horario_Dias">
+      <Column Name="alahd_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="alah_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="alah_dia_semana" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Alarmas_Fuera_Horario_Alarmas_Fuera_Horario_Dias" Member="Alarmas_Fuera_Horario" ThisKey="alah_id" OtherKey="alah_id" Type="Alarmas_Fuera_Horario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alarmas_Fuera_Horario" Member="Alarmas_Fuera_Horario">
+    <Type Name="Alarmas_Fuera_Horario">
+      <Column Name="alah_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="veh_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="alah_horadesde" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="alah_horahasta" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="alah_descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="alah_fechadesde" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="alah_fechahasta" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="alah_velocidad_minima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="alah_tiempo_minimo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="alah_enviar_mail" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="alah_enviar_sms" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Alarmas_Fuera_Horario_Alarmas_Fuera_Horario_Dias" Member="Alarmas_Fuera_Horario_Dias" ThisKey="alah_id" OtherKey="alah_id" Type="Alarmas_Fuera_Horario_Dias" />
+      <Association Name="Vehiculo_Alarmas_Fuera_Horario" Member="Vehiculo" ThisKey="veh_id" OtherKey="veh_id" Type="Vehiculo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alarma_Inicio_Actividad" Member="Alarma_Inicio_Actividad">
+    <Type Name="Alarma_Inicio_Actividad">
+      <Column Name="alaric_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="alaric_descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="alar_horainicio" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="veh_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="alar_enviar_mail" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="alaric_inicio_anteshorario" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Alarma_Inicio_Actividad_Alarmas_Inicio_Actividad_Dias" Member="Alarmas_Inicio_Actividad_Dias" ThisKey="alaric_id" OtherKey="alaric_id" Type="Alarmas_Inicio_Actividad_Dias" />
+      <Association Name="Vehiculo_Alarma_Inicio_Actividad" Member="Vehiculo" ThisKey="veh_id" OtherKey="veh_id" Type="Vehiculo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alarmas_Inicio_Actividad_Dias" Member="Alarmas_Inicio_Actividad_Dias">
+    <Type Name="Alarmas_Inicio_Actividad_Dias">
+      <Column Name="alaricd_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="alaric_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="alaricd_dia_semana" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Alarma_Inicio_Actividad_Alarmas_Inicio_Actividad_Dias" Member="Alarma_Inicio_Actividad" ThisKey="alaric_id" OtherKey="alaric_id" Type="Alarma_Inicio_Actividad" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alarmas_Inactividad_Dias" Member="Alarmas_Inactividad_Dias">
+    <Type Name="Alarmas_Inactividad_Dias">
+      <Column Name="alarid_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="alari_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="alari_dia_semana" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Alarmas_Inactividad_Alarmas_Inactividad_Dias" Member="Alarmas_Inactividad" ThisKey="alari_id" OtherKey="alari_id" Type="Alarmas_Inactividad" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alarmas_Inactividad" Member="Alarmas_Inactividad">
+    <Type Name="Alarmas_Inactividad">
+      <Column Name="alari_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="veh_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="alari_descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="alari_horadesde" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="alari_horahasta" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="alari_fechadesde" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="alari_fechahasta" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="alah_velocidad_minima" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="alari_tiempo_minimo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="alari_enviar_mail" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="alari_enviar_sms" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Alarmas_Inactividad_Alarmas_Inactividad_Dias" Member="Alarmas_Inactividad_Dias" ThisKey="alari_id" OtherKey="alari_id" Type="Alarmas_Inactividad_Dias" />
+      <Association Name="Vehiculo_Alarmas_Inactividad" Member="Vehiculo" ThisKey="veh_id" OtherKey="veh_id" Type="Vehiculo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Uso_Moviles" Member="Uso_Moviles">
+    <Type Name="Uso_Moviles">
+      <Column Name="uso_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="veh_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="uso_fecha_inicio" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alamas_Kms_Excedidos" Member="Alamas_Kms_Excedidos">
+    <Type Name="Alamas_Kms_Excedidos">
+      <Column Name="alak_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="veh_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="alak_descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="alak_frecuencia" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="alak_cant_km" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="alak_enviar_mail" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="alak_enviar_sms" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Vehiculo_Alamas_Kms_Excedidos" Member="Vehiculo" ThisKey="veh_id" OtherKey="veh_id" Type="Vehiculo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Recorridos_Puntos" Member="Recorridos_Puntos">
+    <Type Name="Recorridos_Puntos">
+      <Column Name="rec_punto_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="rec_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rec_latitud" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="rec_longitud" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Recorridos_Puntos_Alertas_Recorrido_Puntos_Visitar" Member="Alertas_Recorrido_Puntos_Visitar" ThisKey="rec_punto_id" OtherKey="rec_punto_id" Type="Alertas_Recorrido_Puntos_Visitar" />
+      <Association Name="Recorridos_Recorridos_Puntos" Member="Recorridos" ThisKey="rec_id" OtherKey="rec_id" Type="Recorridos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alarmas" Member="Alarmas">
+    <Type Name="Alarmas">
+      <Column Name="alar_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="veh_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="alar_nombre" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="alar_fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="alar_nombre_via" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="alar_Localidad" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="alar_Provincia" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="alar_valor" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="alar_Categoria" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="veh_patente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="alar_vista" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="alar_vista_admin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="alar_lat" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="alar_lng" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="veh_conductor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="mail_enviado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="sms_enviado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="alar_limite" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="alar_tipo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="alar_codigo_config" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="alar_mostrar" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="alar_duracion" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alertas_Recorrido_Puntos_Visitar" Member="Alertas_Recorrido_Puntos_Visitar">
+    <Type Name="Alertas_Recorrido_Puntos_Visitar">
+      <Column Name="rec_punto_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="arec_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="rec_punto_fecha_llegada" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="rec_punto_horario_desde" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="rec_punto_horario_hasta" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="rec_punto_direccion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Alertas_Recorridos_Alertas_Recorrido_Puntos_Visitar" Member="Alertas_Recorridos" ThisKey="arec_id" OtherKey="arec_id" Type="Alertas_Recorridos" IsForeignKey="true" />
+      <Association Name="Recorridos_Puntos_Alertas_Recorrido_Puntos_Visitar" Member="Recorridos_Puntos" ThisKey="rec_punto_id" OtherKey="rec_punto_id" Type="Recorridos_Puntos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Inactividad_Moviles" Member="Inactividad_Moviles">
+    <Type Name="Inactividad_Moviles">
+      <Column Name="inc_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="veh_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="inc_fecha_inicio" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="alar_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cortes_Corriente" Member="Cortes_Corrientes">
+    <Type Name="Cortes_Corriente">
+      <Column Name="cor_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="veh_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cort_fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="cort_tipo" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="cort_hecho" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="cort_admin" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="modulo_num" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Vehiculo_Cortes_Corriente" Member="Vehiculo" ThisKey="veh_id" OtherKey="veh_id" Type="Vehiculo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Eventos" Member="Eventos">
+    <Type Name="Evento">
+      <Column Name="eve_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eve_codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="eve_nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Modulos" Member="Modulos">
+    <Type Name="Modulo">
+      <Column Name="mod_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="mod_numero" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="mod_en_uso" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="mod_nro_cel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="mod_version_trama" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Marcadores_Genericos" Member="Marcadores_Genericos">
+    <Type Name="Marcadores_Generico">
+      <Column Name="marc_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="marc_latitud" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="marc_longitud" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tipo_marc_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="marc_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="marc_direccion" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="marc_imagen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="marc_mostrar_a_todos" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Marcadores_Generico_Marcadores_GenericosXClientes" Member="Marcadores_GenericosXClientes" ThisKey="marc_id" OtherKey="marc_id" Type="Marcadores_GenericosXClientes" />
+      <Association Name="Tipos_Marcadores_Marcadores_Generico" Member="Tipos_Marcadores" ThisKey="tipo_marc_id" OtherKey="tipo_marc_id" Type="Tipos_Marcadores" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Alertas_Recordatorios_Por_Km" Member="Alertas_Recordatorios_Por_Kms">
+    <Type Name="Alertas_Recordatorios_Por_Km">
+      <Column Name="reck_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="reck_descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="reck_kms_primer_alarma" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="reck_ocurrencia_cada_km" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="reck_kilm_proxima_alarma" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="reck_notificar_sms" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="reck_notificar_mail" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="veh_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Vehiculo_Alertas_Recordatorios_Por_Km" Member="Vehiculo" ThisKey="veh_id" OtherKey="veh_id" Type="Vehiculo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Respuestas_Comandos" Member="Respuestas_Comandos">
+    <Type Name="Respuestas_Comando">
+      <Column Name="men_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="mod_id" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="men_fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="men_respuesta" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Comandos_Enviados" Member="Comandos_Enviados">
+    <Type Name="Comandos_Enviado">
+      <Column Name="men_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="com_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="mod_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="men_fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="men_enviado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="men_respuesta" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="men_id_terminal" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="men_mensaje" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Comando_Comandos_Enviado" Member="Comando" ThisKey="com_id" OtherKey="com_id" Type="Comando" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Comandos" Member="Comandos">
+    <Type Name="Comando">
+      <Column Name="com_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="com_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="com_comando" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="sen_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="com_encender" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Comando_Comandos_Enviado" Member="Comandos_Enviados" ThisKey="com_id" OtherKey="com_id" Type="Comandos_Enviado" />
+      <Association Name="Sensores_Comando" Member="Sensores" ThisKey="sen_id" OtherKey="sen_id" Type="Sensores" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vMonitoreos" Member="vMonitoreos">
+    <Type Name="vMonitoreo">
+      <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_MODULO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LATITUD" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LONGITUD" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VELOCIDAD" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="ALTURA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TIPO_VIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NOMBRE_VIA" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LOCALIDAD" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PROVINCIA" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="KMS_RECORRIDOS" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="ORIENTACION" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="SENSORES" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TEMP" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RPM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_VEHICULO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ENCENDIDO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OCUPADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BATERIA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIEMPO_PARCIAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRESICION_SATELITE" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="ODOMETRO" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="CARGA_BATERIA_INTERNA" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="CODIGO_EVENTO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="de_memoria" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="procesado_alarma" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="procesado_recalcular" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Clientes" Member="Clientes">
+    <Type Name="Cliente">
+      <Column Name="cli_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cli_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cli_email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cli_contrasenia" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cli_fecha_creacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cli_direccion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="cli_telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cli_activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="cli_Condicion_Iva" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cli_apellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cli_fecha_baja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cli_CP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cli_DNI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tipo_cli_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cli_forma_pago" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cli_fecha_nacimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cli_borrado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="plan_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Cliente_Marcadores" Member="Marcadores" ThisKey="cli_id" OtherKey="cli_id" Type="Marcadores" />
+      <Association Name="Cliente_Clientes_Particulares" Member="Clientes_Particulares" ThisKey="cli_id" OtherKey="cli_id" Type="Clientes_Particulares" />
+      <Association Name="Cliente_Clientes_Empresas" Member="Clientes_Empresas" ThisKey="cli_id" OtherKey="cli_id" Type="Clientes_Empresas" />
+      <Association Name="Cliente_Contactos_Clientes" Member="Contactos_Clientes" ThisKey="cli_id" OtherKey="cli_id" Type="Contactos_Clientes" />
+      <Association Name="Cliente_Zonas" Member="Zonas" ThisKey="cli_id" OtherKey="cli_id" Type="Zonas" />
+      <Association Name="Cliente_Recorridos" Member="Recorridos" ThisKey="cli_id" OtherKey="cli_id" Type="Recorridos" />
+      <Association Name="Cliente_Grupos" Member="Grupos" ThisKey="cli_id" OtherKey="cli_id" Type="Grupos" />
+      <Association Name="Cliente_Vehiculo" Member="Vehiculos" ThisKey="cli_id" OtherKey="cli_id" Type="Vehiculo" />
+      <Association Name="Tipos_Clientes_Cliente" Member="Tipos_Clientes" ThisKey="tipo_cli_id" OtherKey="tipo_cli_id" Type="Tipos_Clientes" IsForeignKey="true" />
+      <Association Name="Plane_Cliente" Member="Plane" ThisKey="plan_id" OtherKey="plan_id" Type="Plane" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Planes" Member="Planes">
+    <Type Name="Plane">
+      <Column Name="plan_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="plan_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="plan_activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Plane_Cliente" Member="Clientes" ThisKey="plan_id" OtherKey="plan_id" Type="Cliente" />
+      <Association Name="Plane_Planes_Parametro" Member="Planes_Parametros" ThisKey="plan_id" OtherKey="plan_id" Type="Planes_Parametro" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Planes_Parametros" Member="Planes_Parametros">
+    <Type Name="Planes_Parametro">
+      <Column Name="plan_item_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="plan_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="plan_item_valor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="plan_item_nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Plane_Planes_Parametro" Member="Plane" ThisKey="plan_id" OtherKey="plan_id" Type="Plane" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vehiculos" Member="Vehiculos">
+    <Type Name="Vehiculo">
+      <Column Name="veh_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cli_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="veh_descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="veh_patente" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="veh_tipo_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="veh_imagen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="mod_id" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="veh_nombre_conductor" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="veh_activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="veh_marca" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="veh_modelo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="veh_color" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tip_uso_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="veh_kilometros" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="veh_modulo_sensor" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="veh_kilometros_acumulados" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="Vehiculo_Alertas_Zonas" Member="Alertas_Zonas" ThisKey="veh_id" OtherKey="veh_id" Type="Alertas_Zonas" />
+      <Association Name="Vehiculo_Alertas_Recordatorios_Por_Fechas" Member="Alertas_Recordatorios_Por_Fechas" ThisKey="veh_id" OtherKey="veh_id" Type="Alertas_Recordatorios_Por_Fechas" />
+      <Association Name="Vehiculo_Alertas_Velocidad_Configuradas" Member="Alertas_Velocidad_Configuradas" ThisKey="veh_id" OtherKey="veh_id" Type="Alertas_Velocidad_Configuradas" />
+      <Association Name="Vehiculo_Alertas_Direcciones" Member="Alertas_Direcciones" ThisKey="veh_id" OtherKey="veh_id" Type="Alertas_Direcciones" />
+      <Association Name="Vehiculo_Sensores_Configurados" Member="Sensores_Configurados" ThisKey="veh_id" OtherKey="veh_id" Type="Sensores_Configurados" />
+      <Association Name="Vehiculo_Sensores_Moviles" Member="Sensores_Moviles" ThisKey="veh_id" OtherKey="veh_id" Type="Sensores_Moviles" />
+      <Association Name="Vehiculo_Grupos_Vehiculos" Member="Grupos_Vehiculos" ThisKey="veh_id" OtherKey="veh_id" Type="Grupos_Vehiculos" />
+      <Association Name="Vehiculo_Alertas_Recorridos" Member="Alertas_Recorridos" ThisKey="veh_id" OtherKey="veh_id" Type="Alertas_Recorridos" />
+      <Association Name="Vehiculo_Alarmas_Fuera_Horario" Member="Alarmas_Fuera_Horarios" ThisKey="veh_id" OtherKey="veh_id" Type="Alarmas_Fuera_Horario" />
+      <Association Name="Vehiculo_Alarma_Inicio_Actividad" Member="Alarma_Inicio_Actividads" ThisKey="veh_id" OtherKey="veh_id" Type="Alarma_Inicio_Actividad" />
+      <Association Name="Vehiculo_Alarmas_Inactividad" Member="Alarmas_Inactividads" ThisKey="veh_id" OtherKey="veh_id" Type="Alarmas_Inactividad" />
+      <Association Name="Vehiculo_Alamas_Kms_Excedidos" Member="Alamas_Kms_Excedidos" ThisKey="veh_id" OtherKey="veh_id" Type="Alamas_Kms_Excedidos" />
+      <Association Name="Vehiculo_Cortes_Corriente" Member="Cortes_Corrientes" ThisKey="veh_id" OtherKey="veh_id" Type="Cortes_Corriente" />
+      <Association Name="Vehiculo_Alertas_Recordatorios_Por_Km" Member="Alertas_Recordatorios_Por_Kms" ThisKey="veh_id" OtherKey="veh_id" Type="Alertas_Recordatorios_Por_Km" />
+      <Association Name="Cliente_Vehiculo" Member="Cliente" ThisKey="cli_id" OtherKey="cli_id" Type="Cliente" IsForeignKey="true" />
+      <Association Name="Tipos_Usos_Moviles_Vehiculo" Member="Tipos_Usos_Moviles" ThisKey="tip_uso_id" OtherKey="tipo_uso_id" Type="Tipos_Usos_Moviles" IsForeignKey="true" />
+      <Association Name="Tipos_Vehiculos_Vehiculo" Member="Tipos_Vehiculos" ThisKey="veh_tipo_id" OtherKey="veh_tipo_id" Type="Tipos_Vehiculos" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

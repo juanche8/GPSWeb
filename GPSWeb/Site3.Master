@@ -1,0 +1,523 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site3.master.vb" Inherits="GPSWeb.Site3" %>
+
+<!DOCTYPE HTML>
+<html >
+<head id="Head1" runat="server">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Rastreo Urbano</title>
+  <meta name="keywords" content="Rastreo Urbano,
+Rastreo vehicular,
+Rastreo satelital,
+Rastreo vehicular satelital,
+Rastreo Satelital vehicular,
+Seguimiento vehicular,
+Seguimiento satelital,
+Seguimiento vehicular satelital,
+Seguimiento satelital vehicular,
+Monitoreo vehicular,
+Monitoreo Satelital,
+Monitoreo vehicular satelital,
+Monitoreo satelital vehicular,
+Control vehicular satelital,
+control satelital vehicular,
+alarma vehicular,
+alarma de autos,
+alarma para autos,
+monitoreo y control vehicular,
+Sistema de rastreo,
+Sistema de seguimiento,
+Sistema de monitoreo,
+Sistema de alarma,
+Sistema de rastreo vehicular,
+Sistema de seguimiento vehicular,
+Sistema de monitoreo vehicular,
+Sistema de alarma vehicular,
+autos,
+moviles,
+flotas,
+camiones,
+motos,
+Logistica,
+Transporte ,
+sistema AVL,
+Software AVL" />
+  <meta name="author" content="Super User" />
+  <meta name="description" content="Rastreo Urbano te permite monitorear tu flota en tiempo real las 24hs del día los 365 días del año. Configurar Alarmas para saber que pasa con tus autos en todo momento y obtener reportes y estadisticas de su uso. También prestamos soluciones de software y hardware  exclusivos para la necesidad de cada empresa." />
+  <!-- jQuery library (served from Google) -->
+  <!-- bxSlider CSS file -->
+<link href="scripts/dist/jquery.bxslider.css" rel="stylesheet" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<!-- bxSlider Javascript file -->
+<script src="scripts/dist/jquery.bxslider.min.js"></script>
+
+    
+<link rel="shortcut icon" href="img/favicon2.ico" type="image/x-icon" />
+<link rel="icon" href="img/favicon2.ico" type="image/x-icon" />
+
+<style type="text/css">
+    .button3{
+   
+    background-color: #FF712D;
+    border-radius: 4px;
+    text-indent: 0px;
+    border: 1px solid #FF712D;
+    display: inline-block;
+    color: White;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;    
+    font-style: normal;
+    padding: 2px 25px;
+    text-decoration: none;
+    text-align: center;
+     height:22px;
+     width:100px;
+    
+}
+    .button2 {
+   
+    background-color: #A8CF45;
+    border-radius: 4px;
+    text-indent: 0px;
+    border: 1px solid #A8CF45;
+    display: inline-block;
+    color: White;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;    
+    font-style: normal;
+    padding: 12.5px 25px;
+    text-decoration: none;
+    text-align: center;
+    -webkit-transition:all 1s ease;
+   -moz-transition: ease-out 1s ease;
+   -o-transition: 1s ease;
+   transition:all 1s ease;
+   transition-property: all;
+    
+}
+.button2:hover {
+	background-color:#f60}
+#menu ul li a {
+	font-family: Helvetica, sans-serif, "Gill Sans MT";
+}
+#menu ul li a 
+{
+	border-right: 1px solid #000000;
+border-left: 1px solid #4d4e50;
+	list-style-type: none;
+}
+
+a:link {
+	text-decoration: none;
+	color: #FFF;
+}
+a:visited {
+	text-decoration: none;
+	color: #FFF;
+}
+a:hover {
+	text-decoration: none;
+	color: #F60;
+}
+a:active {
+	text-decoration: none;
+	color: #FFF;
+}
+#menu {
+	width: 100%;
+	
+	margin: 0 auto;
+	
+	background-color: #C95601;
+		 } 
+		
+#menu ul { list-style: inside; 
+           margin: 0; 
+           padding:5px; 
+		   } 
+		   
+#menu ul li 
+{
+	float: left;
+display: inline;
+position: relative;
+              margin: 0px; 
+			  } 
+
+#menu ul li a {
+	height: 33px;
+	display: block;
+	float: left;
+	padding: 10px 10px 0px 10px;
+	color: #FFF;
+	text-decoration: none;
+	font-size: 13px;
+        top: 0px;
+        left: 0px;
+       width:150px;
+    } 
+
+.menuButton {
+  position: relative;
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  -webkit-transition-property: background-color, color;
+  -webkit-transition-duration: 1s;
+  -o-transition-property: background-color, color;
+  -o-transition-duration: 1s;
+  text-align: center;
+  background-color:#333;
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  
+
+}
+
+.menuButton2 {
+  position: relative;
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  -webkit-transition-property: background-color, color;
+  -webkit-transition-duration: 1s;
+  -o-transition-property: background-color, color;
+  -o-transition-duration: 1s;
+  text-align: center;
+  background-color:#333;
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  
+
+}
+
+.menuButton:hover {
+  position: relative;
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  -webkit-transition-property: background-color, color;
+  -webkit-transition-duration: 1s;
+  -o-transition-property: background-color, color;
+  -o-transition-duration: 1s;
+  background-color:#F60;
+  font-color:#222;
+  -moz-box-shadow: 2px 2px 1px black;
+}				
+
+#submenu1 {
+    width: auto;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	margin-left: 0px;
+}
+#submenu1 ul {
+	margin-top: 10px;
+	font-family: Helvetica, sans-serif, "Gill Sans MT";
+	font-size: 12px;
+	text-decoration: none;
+	list-style-type: none;
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+	display: block;
+	line-height: 35px;
+	border-right-width: 3px;
+	border-right-style: solid;
+	border-right-color: #fff;
+	
+	}
+	.menuButton2 {
+
+  transition-property: color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  -webkit-transition-property:color;
+  -webkit-transition-duration: 1s;
+  -o-transition-property: color;
+  -o-transition-duration: 1s;
+  text-align: center;
+  color: #06C;
+  font-family: sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  
+
+}
+.menuButton3 {
+
+  transition-property: color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  -webkit-transition-property:color;
+  -webkit-transition-duration: 1s;
+  -o-transition-property: color;
+  -o-transition-duration: 1s;
+  text-align: center;
+  color: #06C;
+  font-family: sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  
+
+}
+#submenu1 {
+    width: auto;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	margin-left: 0px;
+}
+#submenu1 ul {
+	margin-top: 10px;
+	font-family: Helvetica, sans-serif, "Gill Sans MT";
+	font-size: 12px;
+	text-decoration: none;
+	list-style-type: none;
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+	display: block;
+	line-height: 30px;
+	border-right-width: 3px;
+	border-right-style: solid;
+	border-right-color: #999;
+	color: #FFF;
+	}
+    
+h1 {
+	font-size: 30px;
+}
+
+
+html, body {
+	border:0; 
+	margin:0; 
+	padding:0; 
+	height:auto;
+	font-size:16px;
+	width:auto;
+	 
+}
+
+
+.cotizarlista{
+background-color: #333;
+color: #fff;
+border: none;
+width: 200px;
+margin-left: 10px;
+margin-top: 0;
+color: #fff;
+border: none;
+width: 90%;
+margin-left: 10px;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+height: 31px;
+padding-top: 0;
+padding-bottom: 0;
+border-radius: 0;
+margin-top: -5px;
+	}
+#SubmitButton {
+width: 88%;
+float: none;
+cursor: pointer;
+background-color:#543 ;
+color: #fff;
+text-align: left;
+margin-left: 14px;
+margin-bottom: 20px;
+}
+.agrandar { 
+-webkit-transition:all 1s ease;
+   -moz-transition: ease-out 1s ease;
+   -o-transition: 1s ease;
+   transition:all 1s ease;
+   transition-property: all;
+	}
+.agrandar:hover {
+	width:121px;
+	height:148px;
+	
+	}
+/* Menú horizontal deslizante
+----------------------------------------------- */
+		#jsddm li ul
+		{	margin: 40px 0;
+			padding: 0;
+			position: absolute;
+			visibility: hidden;
+			height:40px;
+			 
+			}
+		
+		#jsddm li ul li a
+		{	background: #f60;
+		 	
+		 	border-top: 1px solid #777;
+		 	}
+		
+    </style>
+
+    <script>
+        var timeout = 500;
+        var closetimer = 0;
+        var ddmenuitem = 0;
+
+        function jsddm_open() {
+            jsddm_canceltimer();
+            jsddm_close();
+            ddmenuitem = $(this).find('ul').css('visibility', 'visible');
+        }
+
+        function jsddm_close()
+        { if (ddmenuitem) ddmenuitem.css('visibility', 'hidden'); }
+
+        function jsddm_timer()
+        { closetimer = window.setTimeout(jsddm_close, timeout); }
+
+        function jsddm_canceltimer() {
+            if (closetimer) {
+                window.clearTimeout(closetimer);
+                closetimer = null;
+            }
+        }
+
+        $(document).ready(function () {
+            $('#jsddm > li').bind('mouseover', jsddm_open)
+            $('#jsddm > li').bind('mouseout', jsddm_timer)
+        });
+
+        document.onclick = jsddm_close;
+    </script>
+
+     <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+<div id="header" style="background-color:#FFF; height:81px; clear:both; width:100%">
+  <div style="float: right; height:auto; width: 350px; font-family: Helvetica, sans-serif, 'Gill Sans MT'; font-size: 12px; margin-top: 5px; margin-right:40px;margin-bottom: 0;"> <span><b>RASTREO URBANO</b> - Sistema de Monitoreo Satelital<br /></span>
+  <span style="color:#F60;"><b>&nbsp;Tecnología GPS</b></span>
+    <div class="acceso">
+      <a href="http://rastreourbano.com/login.aspx" class="button2" style="color:White;">ACCESO A CLIENTES</a>
+     </div>
+  </div>
+  <div id="logo" style="height:81px; width:220px; margin-top:0%; margin-bottom:0; margin-left:10%"><a href="index.aspx"><img border="0" src="img/rastreo-urbano-logo.png" width="220" height="81"  alt="Rastero Urbano"/></a></div>
+</div>
+<div id="menu" style="background-color:#333; color:#FFF;z-index: 5;position: relative;">
+<div style="width:100%; height:48px;">
+<ul id="jsddm" style="margin:0 auto;margin-left:12%; width:80%;">
+  <li><a class="menuButton" href="Home" >HOME</a></li>
+  <li><a class="menuButton" href="Rastreo-Web">PRODUCTOS</a>
+  <ul>
+  <li><a class="menuButton2" href="Quienes-Somos">QUIENES SOMOS?</a></li>
+  <li><a class="menuButton2" href="Rastreo-Web">RASTREO URBANO WEB</a></li>
+  <li><a class="menuButton2" href="Equipos-GPS">EQUIPOS GPS/GPRS</a></li>
+  </ul>
+  </li>
+   <li><a class="menuButton" href="Servicios">SERVICIOS</a></li>
+  <li><a class="menuButton" href="Soluciones-Logistica">SOLUCIONES A EMPRESAS</a>
+   <ul>
+  <li><a class="menuButton2" href="Soluciones-Logistica">LOGISTICA Y TRANSPORTE</a></li>
+  <li><a class="menuButton2" href="Soluciones-Empresas">EMPRESAS</a></li>
+ 
+  </ul>
+  </li>
+  <li><a class="menuButton" href="Contacto">CONTACTO</a></li>
+</ul></div>
+ 
+</div>
+    <form id="form1" runat="server">
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+    </form>
+
+ <div style="width:100%; height:5px;background: #F60;"></div>
+<div id="footer" style="background-color: #333; height: 250px; width: 100%; font-family: Helvetica, sans-serif, 'Gill Sans MT'; color: #FFF;">
+
+<div style="margin-left:10%"><div id="submenu1" style=" width:20%; height:150px; padding-top:20px; margin-right:10px; float:left; ">
+  <ul>
+    
+    <li><a class="menuButton2" href="Quienes-Somos">Quienes Somos?</a></li>
+       <li><a class="menuButton2" href="#">Proba la Demo</a></li>
+    <li><a class="menuButton2" href="Contacto">Contactanos</a></li>
+    
+  </ul>  
+  </div>
+  
+  <div id="submenu1" style=" width:20%; height:150px; padding-top:20px; margin-right:0px;float:left;">
+  <ul>
+   <li><a class="menuButton2" href="Rastreo-Web">Rastreo Web</a></li>
+    <li><a class="menuButton2" href="Equipos-GPS">Modulos GPS</a></li>
+    <li><a class="menuButton2" href="Servicios">Servicios</a></li>
+    <li><a class="menuButton2" href="Soluciones-Empresas">Soluciones a Empresas</a></li>
+  </ul>   
+        
+  </div>
+  <div id="submenu1" style=" width:20%; height:150px; padding-top:20px; float:left; margin-right:0px; margin-left:0px;">  <ul>   
+    <li><a class="menuButton2" href="#">Noticias</a></li>    
+    <li><a class="menuButton2" href="#">Promociones</a></li>
+    <li><a class="menuButton2" href="http://rastreourbano.com/login.aspx">Area Clientes</a></li>
+    <li></li>
+  </ul> 
+  </div>
+     <div style=" width:20%; height:auto; padding-top:20px; float:right; margin-right:18%; margin-left:0%;"> <a href="https://www.facebook.com/rastreourbanogps?fref=ts"><img class="botf" alt="Facebook" width="31px" height="31px" src="img/iconos/nueva_web_fc.png"  border="0"/></a>&nbsp;
+   <img alt="Mail" src="img/iconos/nueva_web_mailc.png" width="31px" height="31px" />&nbsp;&nbsp;
+         <br /><br />
+         <span style="font-size:12px">Cel.Ventas: 11-59908644</span><br />
+         <span style="font-size:12px">
+         e-mail.: ventas@rastreourbano.com</span><br />
+          <span style="font-size:12px">
+         Buenos Aires, Argentina</span>
+    </div>
+  </div>
+  <div style="height: auto; width: 50%; color: #FFF; font-family: Helvetica, sans-serif, 'Gill Sans MT'; font-size: 11px; font-style: italic; float:left; margin-top:50px; padding-left:30%; margin-bottom:10px;">Rastreo Urbano 2015 Todos los derechos reservados - Realizado por <a href="https://www.facebook.com/CCSistemasyDisenio?ref=bookmarks" target="_blank">C&C Sistemas y Diseño</a></div>
+</div>
+
+   <script type="text/javascript">
+       $(document).ready(function () {
+           $('.bxslider').bxSlider();
+       });
+    
+</script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-60616457-1', 'auto');
+    ga('send', 'pageview');
+
+</script><script>
+             (function (i, s, o, g, r, a, m) {
+                 i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                     (i[r].q = i[r].q || []).push(arguments)
+                 }, i[r].l = 1 * new Date(); a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+             })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+             ga('create', 'UA-60616457-1', 'auto');
+             ga('send', 'pageview');
+
+</script>
+</body>
+</html>

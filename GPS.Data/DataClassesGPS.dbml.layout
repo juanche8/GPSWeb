@@ -1,0 +1,685 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 29.625, 32.625" name="DataClassesGPS">
+  <DataContextMoniker Name="/DataClassesGPSDataContext" />
+  <nestedChildShapes>
+    <classShape Id="817afb91-5767-4e08-b03b-2c65514e4db0" absoluteBounds="0.625, 9.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Tipos_Marcadores" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ad5b8474-d7ca-4e7d-a3c9-f6182c3d08e7" absoluteBounds="0.64000000000000057, 10.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="161c81d5-c629-4610-848a-03fda44fc02e" absoluteBounds="0.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Administradores" />
+      <nestedChildShapes>
+        <elementListCompartment Id="52917fe5-de85-44ae-a294-6dcd5cd8b6ce" absoluteBounds="0.76500000000000057, 1.2100000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ff36b6e9-f0f6-45d6-b4be-c8727b3240b8" absoluteBounds="3.125, 11.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Marcadores" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1583d320-48db-4f41-a37a-07f2fc4dfd2e" absoluteBounds="3.1400000000000006, 11.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.625 : 11.0112939453125); (3.125 : 11.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Tipos_Marcadores/Tipos_Marcadores_Marcadores" />
+      <nodes>
+        <classShapeMoniker Id="817afb91-5767-4e08-b03b-2c65514e4db0" />
+        <classShapeMoniker Id="ff36b6e9-f0f6-45d6-b4be-c8727b3240b8" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d9dc2804-9142-4e07-96bd-dd1ce21ba3a0" absoluteBounds="9.625, 9.875, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Clientes_Particulares" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7876d54-d9a2-4624-b3bb-9d7c8fc2457c" absoluteBounds="9.64, 10.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a8ce8eb2-f80f-4639-b7d9-16a8db7b04c9" absoluteBounds="3.25, 4.875, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Tipos_Clientes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4543e66a-e91d-4dcb-8844-316da6236a4c" absoluteBounds="3.2650000005960464, 5.33500000089407, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="21547661-eb8a-4203-a75d-13d4e64f43a9" absoluteBounds="2.75, 6.625, 2, 1.193992513020838">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Marcadores_GenericosXClientes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26390946-e8a2-4d2e-b611-3ae93fcb25c2" absoluteBounds="2.7650000000000006, 7.0850000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c2b30d9e-c190-4d47-a64b-a1cac6da84f3" absoluteBounds="8, 7, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Clientes_Empresas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6dfc472d-9676-41e1-bd04-73ddc1a94b14" absoluteBounds="8.0150000005960464, 7.46000000089407, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="80863dd9-a97a-4767-abaf-666110930d76" absoluteBounds="1.5, 2.875, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Tipos_Vias" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ea917e16-6546-4f40-8517-516108767559" absoluteBounds="1.5150000000000006, 3.3350000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef4b7b34-34c8-413e-9f5f-3dc1d0048e6c" absoluteBounds="8.875, 12.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Contactos_Clientes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7f8ebe5c-682f-4e66-bdcb-58c89fc2ebfb" absoluteBounds="8.89, 13.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ea07fd03-549c-4c72-a2d5-8a750f6aab17" absoluteBounds="0.875, 16.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Parametros" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eee42c43-4538-422f-be1a-676a7a89b8ae" absoluteBounds="0.88999999999999968, 17.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e810b69f-f2c2-4985-b305-0adfeed629f2" absoluteBounds="22.625, 0.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Zonas_Puntos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b170a740-cef0-4e30-a2b7-eb2d4cf6dd67" absoluteBounds="22.64, 1.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a4614497-ba3c-48e8-93e8-d5665dd8ed29" absoluteBounds="19.875, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Zonas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d1b946a1-f0d8-481e-8a7b-a043c46b9a41" absoluteBounds="19.89, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(21.875 : 1.25564697265625); (22.625 : 1.25564697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Zonas/Zonas_Zonas_Puntos" />
+      <nodes>
+        <classShapeMoniker Id="a4614497-ba3c-48e8-93e8-d5665dd8ed29" />
+        <classShapeMoniker Id="e810b69f-f2c2-4985-b305-0adfeed629f2" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="def3d24d-1b3f-42bd-b998-c3859f9f65fb" absoluteBounds="16.75, 0.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Alertas_Zonas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="88042e5e-aa52-463a-86e5-677adca230fe" absoluteBounds="16.765, 0.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(19.875 : 1.19314697265625); (18.75 : 1.19314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Zonas/Zonas_Alertas_Zonas" />
+      <nodes>
+        <classShapeMoniker Id="a4614497-ba3c-48e8-93e8-d5665dd8ed29" />
+        <classShapeMoniker Id="def3d24d-1b3f-42bd-b998-c3859f9f65fb" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="8e29deca-3c45-4878-bc7a-f3fe273f03f4" absoluteBounds="15.75, 3.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Alertas_Zonas_Frecuencias" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a0a0c762-165a-435f-8d9e-f68b4b51ef46" absoluteBounds="15.765, 4.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(17.25 : 3.23240397135417); (17.25 : 3.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Alertas_Zonas/Alertas_Zonas_Alertas_Zonas_Frecuencias" />
+      <nodes>
+        <classShapeMoniker Id="def3d24d-1b3f-42bd-b998-c3859f9f65fb" />
+        <classShapeMoniker Id="8e29deca-3c45-4878-bc7a-f3fe273f03f4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e4da0e1e-3f9a-4848-85f5-e3c2ca11d682" absoluteBounds="21.625, 4, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Alertas_Recorridos_Frecuencias" />
+      <nestedChildShapes>
+        <elementListCompartment Id="69e25aa1-3cf1-4cb8-9d1d-3f74ca36f848" absoluteBounds="21.64, 4.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4e5e939b-5444-4b84-ae05-90eae433c2e6" absoluteBounds="25.25, 5.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Alertas_Direcciones_Frecuencia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="80c31cf4-2fce-442d-abe5-130e94658f55" absoluteBounds="25.265, 6.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8a5d8c1e-7e69-4b92-a575-d5275fe9d4ef" absoluteBounds="18.5, 6.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Recorridos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8d60e5a2-a487-4e6b-8664-3cdaa1761388" absoluteBounds="18.515, 6.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7de7d805-9dea-4026-a85c-acc4103bf8c5" absoluteBounds="16, 12.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Alertas_Recordatorios_Por_Fechas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="813d37f5-4337-4f00-a5dc-1a16adae5433" absoluteBounds="16.015, 12.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a359aa25-dbf4-4783-8cfc-bea4aeb65ce4" absoluteBounds="12.875, 16.625, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Alarmas_Velocidad" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0f636c56-95ec-4c68-b686-2cd1dd796992" absoluteBounds="12.89, 17.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5c7a6455-733c-4935-9f58-05254a6f7bc5" absoluteBounds="16.125, 16.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Alertas_Velocidad_Configuradas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eb86e7ca-14e3-407b-8e5d-139771fea136" absoluteBounds="16.14, 16.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14.875 : 17.9868233235677); (15.5260441666667 : 17.9868233235677 : JumpStart); (15.6927108333333 : 17.9868233235677 : JumpEnd); (15.7213516666667 : 17.9868233235677 : JumpStart); (15.8880183333333 : 17.9868233235677 : JumpEnd); (16.125 : 17.9868233235677)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Alarmas_Velocidad/Alarmas_Velocidad_Alertas_Velocidad_Configuradas" />
+      <nodes>
+        <classShapeMoniker Id="a359aa25-dbf4-4783-8cfc-bea4aeb65ce4" />
+        <classShapeMoniker Id="5c7a6455-733c-4935-9f58-05254a6f7bc5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4ecf3ffd-986d-4c94-9225-2b29735ad723" absoluteBounds="25, 3.625, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Direcciones" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd9a89db-3898-4d1b-b81a-49ce7ff69b22" absoluteBounds="25.015, 4.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="96cb1f0c-b881-4406-8746-934127e1fa13" absoluteBounds="22.5, 6.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Alertas_Direcciones" />
+      <nestedChildShapes>
+        <elementListCompartment Id="08a88939-b178-4d8b-8715-1ce236d3e718" absoluteBounds="22.515, 6.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(24.5 : 7.07294840494792); (25.25 : 7.07294840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Alertas_Direcciones/Alertas_Direcciones_Alertas_Direcciones_Frecuencia" />
+      <nodes>
+        <classShapeMoniker Id="96cb1f0c-b881-4406-8746-934127e1fa13" />
+        <classShapeMoniker Id="4e5e939b-5444-4b84-ae05-90eae433c2e6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(25.09375 : 5.5881982421875); (25.09375 : 8.470400390625); (24.5 : 8.470400390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Direcciones/Direcciones_Alertas_Direcciones" />
+      <nodes>
+        <classShapeMoniker Id="4ecf3ffd-986d-4c94-9225-2b29735ad723" />
+        <classShapeMoniker Id="96cb1f0c-b881-4406-8746-934127e1fa13" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c6437cc8-443f-4113-9dca-4dc3a7a74a27" absoluteBounds="19.875, 11.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Tipos_Usos_Moviles" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f593911-daee-4bb4-8eb2-aebf86d07b8b" absoluteBounds="19.89, 11.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4a84f789-17a2-444f-9961-ce615e7c6944" absoluteBounds="5.125, 3.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Sensores_Configurados" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fba8a9f6-6d0e-460e-8680-c7940cf787d2" absoluteBounds="5.14, 3.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d43e7e81-d1ca-45a0-859a-13aa82ead81a" absoluteBounds="3.75, 1.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Sensores_Moviles" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bf0bd909-70fe-4769-819e-16f925848a3a" absoluteBounds="3.765, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c3d801f0-d95d-46f4-aaf0-e0e301cd23e4" absoluteBounds="6.875, 0.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Sensores" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2cac07b9-a39e-4e17-bcbe-fe4d3ff79973" absoluteBounds="6.89, 0.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.875 : 2.84780110677083); (7.875 : 3.81814697265625); (7.125 : 3.81814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Sensores/Sensores_Sensores_Configurados" />
+      <nodes>
+        <classShapeMoniker Id="c3d801f0-d95d-46f4-aaf0-e0e301cd23e4" />
+        <classShapeMoniker Id="4a84f789-17a2-444f-9961-ce615e7c6944" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.875 : 1.94314697265625); (5.75 : 1.94314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Sensores/Sensores_Sensores_Moviles" />
+      <nodes>
+        <classShapeMoniker Id="c3d801f0-d95d-46f4-aaf0-e0e301cd23e4" />
+        <classShapeMoniker Id="d43e7e81-d1ca-45a0-859a-13aa82ead81a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7ecfef09-3074-4b6b-8372-4f831511d7ea" absoluteBounds="16.25, 20.125, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Grupos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="864c9aa7-9514-4314-90fe-091f82b16308" absoluteBounds="16.265, 20.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="750b780c-6dcc-4879-918c-0c363cb902b4" absoluteBounds="19, 13.875, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Grupos_Vehiculos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cc588220-2d83-4913-ba6f-f60fc1d1900c" absoluteBounds="19.015, 14.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(18.21875 : 20.125); (18.21875 : 14.8592464485677); (19 : 14.8592464485677)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Grupos/Grupos_Grupos_Vehiculos" />
+      <nodes>
+        <classShapeMoniker Id="7ecfef09-3074-4b6b-8372-4f831511d7ea" />
+        <classShapeMoniker Id="750b780c-6dcc-4879-918c-0c363cb902b4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9416b505-7da2-4aee-9d8a-27b7794214db" absoluteBounds="13, 1.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Tipos_Vehiculos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="166002b9-bba0-4395-9bf5-7c6f7d2f5c48" absoluteBounds="13.015, 2.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef5a1e33-c46e-40d4-9cfd-9eeca6d8238e" absoluteBounds="0.875, 14.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Modulos_Conexiones" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b0a23a32-d7cd-4b09-be9e-52737bb4dc9f" absoluteBounds="0.88999999999999968, 14.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1f8299ff-bbc0-448a-b090-d936ac2a93c3" absoluteBounds="19.5, 3.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Alertas_Recorridos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9216135c-aef7-4bba-99dc-5f08ce6f8019" absoluteBounds="19.515, 3.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(21.5 : 4.88544840494792); (21.625 : 4.88544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Alertas_Recorridos/Alertas_Recorridos_Alertas_Recorridos_Frecuencias" />
+      <nodes>
+        <classShapeMoniker Id="1f8299ff-bbc0-448a-b090-d936ac2a93c3" />
+        <classShapeMoniker Id="e4da0e1e-3f9a-4848-85f5-e3c2ca11d682" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20 : 6.5); (20 : 6.23240397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Recorridos/Recorridos_Alertas_Recorridos" />
+      <nodes>
+        <classShapeMoniker Id="8a5d8c1e-7e69-4b92-a575-d5275fe9d4ef" />
+        <classShapeMoniker Id="1f8299ff-bbc0-448a-b090-d936ac2a93c3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c99ea9a8-f091-4dae-9cc1-ebd2a49d1f02" absoluteBounds="6, 5.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Alarmas_Fuera_Horario_Dias" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d6e5c23-8acd-4c4c-ab09-8304a48bf19b" absoluteBounds="6.015, 6.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e8413f4a-c97e-42d2-9674-908a9c192057" absoluteBounds="6, 11.125, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Alarmas_Fuera_Horario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f3af695f-7d58-4996-9aa8-f43afddec501" absoluteBounds="6.015, 11.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.96875 : 11.125); (6.96875 : 7.0112939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Alarmas_Fuera_Horario/Alarmas_Fuera_Horario_Alarmas_Fuera_Horario_Dias" />
+      <nodes>
+        <classShapeMoniker Id="e8413f4a-c97e-42d2-9674-908a9c192057" />
+        <classShapeMoniker Id="c99ea9a8-f091-4dae-9cc1-ebd2a49d1f02" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9ce23d26-7762-4553-931f-9987b5d752db" absoluteBounds="6.375, 21.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Alarma_Inicio_Actividad" />
+      <nestedChildShapes>
+        <elementListCompartment Id="430d7f0c-ceb2-4b62-86ea-ef7d9ea5784b" absoluteBounds="6.39, 22.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b85aecb6-ea7d-499a-9add-0b9a32c1d029" absoluteBounds="9.625, 23.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Alarmas_Inicio_Actividad_Dias" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b6b4df0-7265-484f-acf6-fdf13c182da2" absoluteBounds="9.64, 23.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.375 : 23.4815991210938); (9.625 : 23.4815991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Alarma_Inicio_Actividad/Alarma_Inicio_Actividad_Alarmas_Inicio_Actividad_Dias" />
+      <nodes>
+        <classShapeMoniker Id="9ce23d26-7762-4553-931f-9987b5d752db" />
+        <classShapeMoniker Id="b85aecb6-ea7d-499a-9add-0b9a32c1d029" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e3ecdbe0-6bec-4536-a97d-4d7b5ad95749" absoluteBounds="12.875, 23.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Alarmas_Inactividad_Dias" />
+      <nestedChildShapes>
+        <elementListCompartment Id="36f841a7-9544-4190-9c61-cfce8ee1c3c4" absoluteBounds="12.89, 24.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c23d7d5a-804e-4b4f-8048-9a6257c2701d" absoluteBounds="16.25, 22.25, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Alarmas_Inactividad" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf0b4ef3-cae4-426d-9d6c-314ceb82914f" absoluteBounds="16.265, 22.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(16.25 : 24.4431469726563); (15.8880183333333 : 24.4431469726563 : JumpStart); (15.7213516666667 : 24.4431469726563 : JumpEnd); (14.875 : 24.4431469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Alarmas_Inactividad/Alarmas_Inactividad_Alarmas_Inactividad_Dias" />
+      <nodes>
+        <classShapeMoniker Id="c23d7d5a-804e-4b4f-8048-9a6257c2701d" />
+        <classShapeMoniker Id="e3ecdbe0-6bec-4536-a97d-4d7b5ad95749" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="6abc7b33-cc42-4cce-bb77-425e5c54fb2a" absoluteBounds="1.5, 22.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Uso_Moviles" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aee0600b-4213-4532-a494-ad9b41259573" absoluteBounds="1.5150000000000001, 22.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b409fd7f-cb69-4ce5-9d72-d1eeff6f4689" absoluteBounds="6.375, 25.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Alamas_Kms_Excedidos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dc05bc52-5a24-4a80-b6a1-ce889a89dd49" absoluteBounds="6.39, 26.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="459e8fdc-2ab7-44d9-8064-46710071aba4" absoluteBounds="22.25, 10, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Recorridos_Puntos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6318feaf-917c-48b0-8ce5-5dcf8594605d" absoluteBounds="22.265, 10.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(19.5 : 8.27089680989583); (19.5 : 10.59375); (22.25 : 10.59375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Recorridos/Recorridos_Recorridos_Puntos" />
+      <nodes>
+        <classShapeMoniker Id="8a5d8c1e-7e69-4b92-a575-d5275fe9d4ef" />
+        <classShapeMoniker Id="459e8fdc-2ab7-44d9-8064-46710071aba4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="8d271a80-7b4a-44d9-af25-7ade81d864fb" absoluteBounds="10.25, 1.875, 2, 5.0400211588541657">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Alarmas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e29462f2-fe2d-43b7-98a8-ba84aa6ea74e" absoluteBounds="10.265, 2.335, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6e6c0a7b-60eb-41dc-9333-20a4d03f6f8f" absoluteBounds="27.375, 9.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Alertas_Recorrido_Puntos_Visitar" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be3d1420-991f-4ee9-b609-e73d31e4f67c" absoluteBounds="27.39, 10.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(21.5 : 3.53125); (28.375 : 3.53125); (28.375 : 9.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Alertas_Recorridos/Alertas_Recorridos_Alertas_Recorrido_Puntos_Visitar" />
+      <nodes>
+        <classShapeMoniker Id="1f8299ff-bbc0-448a-b090-d936ac2a93c3" />
+        <classShapeMoniker Id="6e6c0a7b-60eb-41dc-9333-20a4d03f6f8f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(24.25 : 10.7892976888021); (27.375 : 10.7892976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Recorridos_Puntos/Recorridos_Puntos_Alertas_Recorrido_Puntos_Visitar" />
+      <nodes>
+        <classShapeMoniker Id="459e8fdc-2ab7-44d9-8064-46710071aba4" />
+        <classShapeMoniker Id="6e6c0a7b-60eb-41dc-9333-20a4d03f6f8f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0c6bac37-d066-4e67-8401-98ce3909152c" absoluteBounds="3.75, 25.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Inactividad_Moviles" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0de03474-a9f5-4ee6-9135-d5fcbee1cdd1" absoluteBounds="3.765, 25.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9817f949-0eb4-4961-b6b5-56032edc408d" absoluteBounds="7, 15.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Cortes_Corriente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7f8556d2-253f-42f9-92b4-1e39a78df363" absoluteBounds="7.0150000000000006, 15.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c7f50d47-7b67-4c82-9bc9-3795bbcd5953" absoluteBounds="6.5, 28.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Evento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="28c771d6-0b7a-4fd6-af0a-81b9f6143978" absoluteBounds="6.515, 28.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="36624c77-aa9e-48ab-8038-4a9193c47ffa" absoluteBounds="3.875, 15.125, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Modulo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="83a921cf-1162-4678-8a8b-deaac3ef3598" absoluteBounds="3.89, 15.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="726c94cd-c865-4add-bfa9-55f489db56b9" absoluteBounds="3.25, 8.625, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Marcadores_Generico" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd248aa9-d028-4bf6-8eb7-ca037b66d2eb" absoluteBounds="3.2649999999999997, 9.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4 : 8.625); (4 : 7.81899251302084)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Marcadores_Generico/Marcadores_Generico_Marcadores_GenericosXClientes" />
+      <nodes>
+        <classShapeMoniker Id="726c94cd-c865-4add-bfa9-55f489db56b9" />
+        <classShapeMoniker Id="21547661-eb8a-4203-a75d-13d4e64f43a9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.625 : 9.96875); (2.79166666666667 : 9.96875 : JumpStart); (2.95833333333333 : 9.96875 : JumpEnd); (3.25 : 9.96875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Tipos_Marcadores/Tipos_Marcadores_Marcadores_Generico" />
+      <nodes>
+        <classShapeMoniker Id="817afb91-5767-4e08-b03b-2c65514e4db0" />
+        <classShapeMoniker Id="726c94cd-c865-4add-bfa9-55f489db56b9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0afaadb8-fc9f-4647-ae75-ec1542ebe7dd" absoluteBounds="12.125, 13.625, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Alertas_Recordatorios_Por_Km" />
+      <nestedChildShapes>
+        <elementListCompartment Id="501967b3-5745-4cb2-b1c4-065547ce54ee" absoluteBounds="12.14, 14.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f07ae136-b502-4397-be68-500ad49a7c96" absoluteBounds="1, 19, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Respuestas_Comando" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97f42c9c-f92f-4678-b300-8fbbc3aec735" absoluteBounds="1.0150000000000001, 19.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0b76f1a6-b3b3-4cea-b163-3308e4753ceb" absoluteBounds="4.875, 18, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Comandos_Enviado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="749b6a6f-7e0e-4ceb-92d6-1f9b2ce384e9" absoluteBounds="4.89, 18.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a112f3ed-c8aa-497d-9851-ab24f4255b16" absoluteBounds="8.25, 18.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Comando" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ffadc25-1c04-4ff0-9046-8730c22aaef3" absoluteBounds="8.265, 19.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 19.4864005533854); (6.875 : 19.4864005533854)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Comando/Comando_Comandos_Enviado" />
+      <nodes>
+        <classShapeMoniker Id="a112f3ed-c8aa-497d-9851-ab24f4255b16" />
+        <classShapeMoniker Id="0b76f1a6-b3b3-4cea-b163-3308e4753ceb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.875 : 2.23640005338542); (9.04166666666667 : 2.23640005338542 : JumpStart); (9.20833333333333 : 2.23640005338542 : JumpEnd); (9.29166666666667 : 2.23640005338542 : JumpStart); (9.45833333333333 : 2.23640005338542 : JumpEnd); (10.0625 : 2.23640005338542); (10.0625 : 9.8125); (8.8125 : 9.8125); (8.8125 : 15.1875); (9.6562495 : 15.1875); (9.6562495 : 18.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Sensores/Sensores_Comando" />
+      <nodes>
+        <classShapeMoniker Id="c3d801f0-d95d-46f4-aaf0-e0e301cd23e4" />
+        <classShapeMoniker Id="a112f3ed-c8aa-497d-9851-ab24f4255b16" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="52b358ed-d489-43ba-950a-5544774a15b9" absoluteBounds="1, 26, 2, 6.3861311848958326">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/vMonitoreo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="154440bf-1c9e-44d6-b5b7-872674bc4f89" absoluteBounds="1.0150000000000001, 26.46, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e9e0a815-a88e-4ada-84b5-860096e93e5e" absoluteBounds="12.375, 6.25, 2, 4.2708154296874987">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Cliente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f08a1171-16a9-4b1d-bc02-2213edf086e6" absoluteBounds="12.39, 6.7100000000000009, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bdd1e5cf-44c6-4bdc-b028-972c3ded9408" absoluteBounds="0.75, 12.25, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Plane" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5ed1bdab-e959-480d-ae53-c0675ef86047" absoluteBounds="0.765, 12.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(12.375 : 7.7852184765625); (10.5 : 7.7852184765625); (10.5 : 9.47280110677083); (10.1458333333333 : 9.47280110677083 : JumpStart); (9.97916666666667 : 9.47280110677083 : JumpEnd); (7.83333333333333 : 9.47280110677083 : JumpStart); (7.66666666666667 : 9.47280110677083 : JumpEnd); (7.05208333333333 : 9.47280110677083 : JumpStart); (6.88541666666667 : 9.47280110677083 : JumpEnd); (5.5 : 9.47280110677083); (5.5 : 11.125); (4.156252 : 11.125); (4.156252 : 11.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Cliente/Cliente_Marcadores" />
+      <nodes>
+        <classShapeMoniker Id="e9e0a815-a88e-4ada-84b5-860096e93e5e" />
+        <classShapeMoniker Id="ff36b6e9-f0f6-45d6-b4be-c8727b3240b8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.375 : 10.1979077148437); (11.625 : 10.1979077148437)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Cliente/Cliente_Clientes_Particulares" />
+      <nodes>
+        <classShapeMoniker Id="e9e0a815-a88e-4ada-84b5-860096e93e5e" />
+        <classShapeMoniker Id="d9dc2804-9142-4e07-96bd-dd1ce21ba3a0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.375 : 7.57250578971354); (10 : 7.57250578971354)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Cliente/Cliente_Clientes_Empresas" />
+      <nodes>
+        <classShapeMoniker Id="e9e0a815-a88e-4ada-84b5-860096e93e5e" />
+        <classShapeMoniker Id="c2b30d9e-c190-4d47-a64b-a1cac6da84f3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.28125 : 10.5208154296875); (14.28125 : 13.21875); (11.9583333333333 : 13.21875 : JumpStart); (11.7916666666667 : 13.21875 : JumpEnd); (10.875 : 13.21875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Cliente/Cliente_Contactos_Clientes" />
+      <nodes>
+        <classShapeMoniker Id="e9e0a815-a88e-4ada-84b5-860096e93e5e" />
+        <classShapeMoniker Id="ef4b7b34-34c8-413e-9f5f-3dc1d0048e6c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.375 : 8.38540771484375); (14.4479166666667 : 8.38540771484375 : JumpStart); (14.6145833333333 : 8.38540771484375 : JumpEnd); (14.625 : 8.38540771484375); (14.625 : 6.25); (14.9791666666667 : 6.25 : JumpStart); (15.1458333333333 : 6.25 : JumpEnd); (15.2916666666667 : 6.25 : JumpStart); (15.4583333333333 : 6.25 : JumpEnd); (15.6822926666667 : 6.25 : JumpStart); (15.8489593333333 : 6.25 : JumpEnd); (16.0729186666667 : 6.25 : JumpStart); (16.2395853333333 : 6.25 : JumpEnd); (19.25 : 6.25); (19.25 : 3.25); (20.875 : 3.25); (20.875 : 1.8862939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Cliente/Cliente_Zonas" />
+      <nodes>
+        <classShapeMoniker Id="e9e0a815-a88e-4ada-84b5-860096e93e5e" />
+        <classShapeMoniker Id="a4614497-ba3c-48e8-93e8-d5665dd8ed29" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.375 : 7.09375); (14.4479166666667 : 7.09375 : JumpStart); (14.7083333333333 : 7.09375 : JumpEnd); (14.9791666666667 : 7.09375 : JumpStart); (15.1458333333333 : 7.09375 : JumpEnd); (15.2916666666667 : 7.09375 : JumpStart); (15.4583333333333 : 7.09375 : JumpEnd); (15.6822926666667 : 7.09375 : JumpStart); (15.8489593333333 : 7.09375 : JumpEnd); (16.0729186666667 : 7.09375 : JumpStart); (16.2395853333333 : 7.09375 : JumpEnd); (18.1197916666667 : 7.09375 : JumpStart); (18.2864583333333 : 7.09375 : JumpEnd); (18.5 : 7.09375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Cliente/Cliente_Recorridos" />
+      <nodes>
+        <classShapeMoniker Id="e9e0a815-a88e-4ada-84b5-860096e93e5e" />
+        <classShapeMoniker Id="8a5d8c1e-7e69-4b92-a575-d5275fe9d4ef" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.375 : 6.6406225); (14.4479166666667 : 6.6406225 : JumpStart); (14.7083333333333 : 6.6406225 : JumpEnd); (14.9791666666667 : 6.6406225 : JumpStart); (15.1458333333333 : 6.6406225 : JumpEnd); (15.2916666666667 : 6.6406225 : JumpStart); (15.4583333333333 : 6.6406225 : JumpEnd); (15.6822926666667 : 6.6406225 : JumpStart); (15.8489593333333 : 6.6406225 : JumpEnd); (16.0729186666667 : 6.6406225 : JumpStart); (16.2395853333333 : 6.6406225 : JumpEnd); (18.203125 : 6.6406225); (18.203125 : 20.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Cliente/Cliente_Grupos" />
+      <nodes>
+        <classShapeMoniker Id="e9e0a815-a88e-4ada-84b5-860096e93e5e" />
+        <classShapeMoniker Id="7ecfef09-3074-4b6b-8372-4f831511d7ea" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.25 : 6.06899251302083); (4.25 : 6.375); (5.75 : 6.375); (5.75 : 9.53530110677083); (6.88541666666667 : 9.53530110677083 : JumpStart); (7.05208333333333 : 9.53530110677083 : JumpEnd); (7.66666666666667 : 9.53530110677083 : JumpStart); (7.83333333333333 : 9.53530110677083 : JumpEnd); (9.97916666666667 : 9.53530110677083 : JumpStart); (10.1458333333333 : 9.53530110677083 : JumpEnd); (12 : 9.53530110677083); (12 : 8.71791879427083); (12.375 : 8.71791879427083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Tipos_Clientes/Tipos_Clientes_Cliente" />
+      <nodes>
+        <classShapeMoniker Id="a8ce8eb2-f80f-4639-b7d9-16a8db7b04c9" />
+        <classShapeMoniker Id="e9e0a815-a88e-4ada-84b5-860096e93e5e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 12.25); (1.75 : 11.2612939453125); (2.875 : 11.2612939453125); (2.875 : 8.375); (3.91666666666667 : 8.375 : JumpStart); (4.08333333333333 : 8.375 : JumpEnd); (5.66666666666667 : 8.375 : JumpStart); (5.83333333333333 : 8.375 : JumpEnd); (6.88541666666667 : 8.375 : JumpStart); (7.05208333333333 : 8.375 : JumpEnd); (7.75 : 8.375); (7.75 : 9.72280110677083); (9.97916666666667 : 9.72280110677083 : JumpStart); (10.1458333333333 : 9.72280110677083 : JumpEnd); (12.125 : 9.72280110677083); (12.125 : 8.71791879427083); (12.375 : 8.71791879427083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Plane/Plane_Cliente" />
+      <nodes>
+        <classShapeMoniker Id="bdd1e5cf-44c6-4bdc-b028-972c3ded9408" />
+        <classShapeMoniker Id="e9e0a815-a88e-4ada-84b5-860096e93e5e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d145a5e5-0040-43f1-926f-68802c28e4b1" absoluteBounds="13.25, 21.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Planes_Parametro" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cbb15f94-6ac2-4210-8efd-5a21a96ee305" absoluteBounds="13.265, 21.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(0.78125 : 13.6362939453125); (0.78125 : 21.46875); (11.7916666666667 : 21.46875 : JumpStart); (11.9583333333333 : 21.46875 : JumpEnd); (13.25 : 21.46875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Plane/Plane_Planes_Parametro" />
+      <nodes>
+        <classShapeMoniker Id="bdd1e5cf-44c6-4bdc-b028-972c3ded9408" />
+        <classShapeMoniker Id="d145a5e5-0040-43f1-926f-68802c28e4b1" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="53413db5-9fc6-4eec-82a0-b5368b5ec404" absoluteBounds="14.875, 7.75, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/DataClassesGPSDataContext/Vehiculo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf7055c6-d2e9-4212-ba85-9069220af47e" absoluteBounds="14.89, 8.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(15.375 : 7.75); (15.375 : 1.15625); (16.75 : 1.15625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Vehiculo/Vehiculo_Alertas_Zonas" />
+      <nodes>
+        <classShapeMoniker Id="53413db5-9fc6-4eec-82a0-b5368b5ec404" />
+        <classShapeMoniker Id="def3d24d-1b3f-42bd-b998-c3859f9f65fb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.4375 : 11.6362125651042); (16.4375 : 12.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Vehiculo/Vehiculo_Alertas_Recordatorios_Por_Fechas" />
+      <nodes>
+        <classShapeMoniker Id="53413db5-9fc6-4eec-82a0-b5368b5ec404" />
+        <classShapeMoniker Id="7de7d805-9dea-4026-a85c-acc4103bf8c5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.875 : 9.69310628255208); (18.09375 : 9.69310628255208); (18.09375 : 16.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Vehiculo/Vehiculo_Alertas_Velocidad_Configuradas" />
+      <nodes>
+        <classShapeMoniker Id="53413db5-9fc6-4eec-82a0-b5368b5ec404" />
+        <classShapeMoniker Id="5c7a6455-733c-4935-9f58-05254a6f7bc5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.875 : 8.782900390625); (18.1197916666667 : 8.782900390625 : JumpStart); (18.2864583333333 : 8.782900390625 : JumpEnd); (19.4166666666667 : 8.782900390625 : JumpStart); (19.5833333333333 : 8.782900390625 : JumpEnd); (22.5 : 8.782900390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Vehiculo/Vehiculo_Alertas_Direcciones" />
+      <nodes>
+        <classShapeMoniker Id="53413db5-9fc6-4eec-82a0-b5368b5ec404" />
+        <classShapeMoniker Id="96cb1f0c-b881-4406-8746-934127e1fa13" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.156252 : 7.75); (16.156252 : 5.77089680989583); (15.4583333333333 : 5.77089680989583 : JumpStart); (15.1666666666667 : 5.77089680989583 : JumpEnd); (14.6145833333333 : 5.77089680989583 : JumpStart); (14.4479166666667 : 5.77089680989583 : JumpEnd); (12.5 : 5.77089680989583); (12.5 : 1.625); (9.125 : 1.625); (9.125 : 3.81814697265625); (7.125 : 3.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Vehiculo/Vehiculo_Sensores_Configurados" />
+      <nodes>
+        <classShapeMoniker Id="53413db5-9fc6-4eec-82a0-b5368b5ec404" />
+        <classShapeMoniker Id="4a84f789-17a2-444f-9961-ce615e7c6944" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.765626 : 7.75); (15.765626 : 5.89589680989583); (15.4583333333333 : 5.89589680989583 : JumpStart); (15.2916666666667 : 5.89589680989583 : JumpEnd); (15.25 : 5.89589680989583); (15.25 : 1.75); (12.5833333333333 : 1.75 : JumpStart); (12.4166666666667 : 1.75 : JumpEnd); (9.375 : 1.75); (9.375 : 3.09780110677083); (9.20833333333333 : 3.09780110677083 : JumpStart); (9.04166666666667 : 3.09780110677083 : JumpEnd); (7.95833333333333 : 3.09780110677083 : JumpStart); (7.79166666666667 : 3.09780110677083 : JumpEnd); (7.375 : 3.09780110677083); (7.375 : 2.875); (6.125 : 2.875); (6.125 : 1.94314697265625); (5.75 : 1.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Vehiculo/Vehiculo_Sensores_Moviles" />
+      <nodes>
+        <classShapeMoniker Id="53413db5-9fc6-4eec-82a0-b5368b5ec404" />
+        <classShapeMoniker Id="d43e7e81-d1ca-45a0-859a-13aa82ead81a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.40625 : 11.6362125651042); (15.40625 : 14.6323705615234); (15.5260441666667 : 14.6323705615234 : JumpStart); (15.6927108333333 : 14.6323705615234 : JumpEnd); (15.7213516666667 : 14.6323705615234 : JumpStart); (15.8880183333333 : 14.6323705615234 : JumpEnd); (18.0104166666667 : 14.6323705615234 : JumpStart); (18.2864583333333 : 14.6323705615234 : JumpEnd); (19 : 14.6323705615234)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Vehiculo/Vehiculo_Grupos_Vehiculos" />
+      <nodes>
+        <classShapeMoniker Id="53413db5-9fc6-4eec-82a0-b5368b5ec404" />
+        <classShapeMoniker Id="750b780c-6dcc-4879-918c-0c363cb902b4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.0625 : 7.75); (15.0625 : 6.064150390625); (15.2916666666667 : 6.064150390625 : JumpStart); (15.4583333333333 : 6.064150390625 : JumpEnd); (15.6822926666667 : 6.064150390625 : JumpStart); (15.8489593333333 : 6.064150390625 : JumpEnd); (16.0729186666667 : 6.064150390625 : JumpStart); (16.2395853333333 : 6.064150390625 : JumpEnd); (19.1666666666667 : 6.064150390625 : JumpStart); (19.3333333333333 : 6.064150390625 : JumpEnd); (19.5 : 6.064150390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Vehiculo/Vehiculo_Alertas_Recorridos" />
+      <nodes>
+        <classShapeMoniker Id="53413db5-9fc6-4eec-82a0-b5368b5ec404" />
+        <classShapeMoniker Id="1f8299ff-bbc0-448a-b090-d936ac2a93c3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.921875 : 11.6362125651042); (15.921875 : 12); (15.75 : 12); (15.75 : 12.5489005533854); (15.6927108333333 : 12.5489005533854 : JumpStart); (15.5260441666667 : 12.5489005533854 : JumpEnd); (15.4895833333333 : 12.5489005533854 : JumpStart); (15.1744781666667 : 12.5489005533854 : JumpEnd); (15.0442673333333 : 12.5489005533854 : JumpStart); (14.8776006666667 : 12.5489005533854 : JumpEnd); (14.3645833333333 : 12.5489005533854 : JumpStart); (14.1979166666667 : 12.5489005533854 : JumpEnd); (11.9583333333333 : 12.5489005533854 : JumpStart); (11.7916666666667 : 12.5489005533854 : JumpEnd); (8.89583333333333 : 12.5489005533854 : JumpStart); (8.72916666666667 : 12.5489005533854 : JumpEnd); (8 : 12.5489005533854)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Vehiculo/Vehiculo_Alarmas_Fuera_Horario" />
+      <nodes>
+        <classShapeMoniker Id="53413db5-9fc6-4eec-82a0-b5368b5ec404" />
+        <classShapeMoniker Id="e8413f4a-c97e-42d2-9674-908a9c192057" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.109373 : 11.6362125651042); (15.109373 : 12); (15.0442673333333 : 12 : JumpStart); (14.8776006666667 : 12 : JumpEnd); (14.3645833333333 : 12 : JumpStart); (14.1979166666667 : 12 : JumpEnd); (11.875 : 12); (11.875 : 22.4687505); (8.375 : 22.4687505)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Vehiculo/Vehiculo_Alarma_Inicio_Actividad" />
+      <nodes>
+        <classShapeMoniker Id="53413db5-9fc6-4eec-82a0-b5368b5ec404" />
+        <classShapeMoniker Id="9ce23d26-7762-4553-931f-9987b5d752db" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.6093775 : 11.6362125651042); (15.6093775 : 23.6358686751302); (15.7213516666667 : 23.6358686751302 : JumpStart); (15.8880183333333 : 23.6358686751302 : JumpEnd); (16.25 : 23.6358686751302)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Vehiculo/Vehiculo_Alarmas_Inactividad" />
+      <nodes>
+        <classShapeMoniker Id="53413db5-9fc6-4eec-82a0-b5368b5ec404" />
+        <classShapeMoniker Id="c23d7d5a-804e-4b4f-8048-9a6257c2701d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.804685 : 11.6362125651042); (15.804685 : 26.8277498372396); (8.375 : 26.8277498372396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Vehiculo/Vehiculo_Alamas_Kms_Excedidos" />
+      <nodes>
+        <classShapeMoniker Id="53413db5-9fc6-4eec-82a0-b5368b5ec404" />
+        <classShapeMoniker Id="b409fd7f-cb69-4ce5-9d72-d1eeff6f4689" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.2578115 : 11.6362125651042); (15.2578115 : 16.1739005533854); (11.9583333333333 : 16.1739005533854 : JumpStart); (11.7916666666667 : 16.1739005533854 : JumpEnd); (9.73958283333333 : 16.1739005533854 : JumpStart); (9.57291616666667 : 16.1739005533854 : JumpEnd); (9 : 16.1739005533854)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Vehiculo/Vehiculo_Cortes_Corriente" />
+      <nodes>
+        <classShapeMoniker Id="53413db5-9fc6-4eec-82a0-b5368b5ec404" />
+        <classShapeMoniker Id="9817f949-0eb4-4961-b6b5-56032edc408d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.960934 : 11.6362125651042); (14.960934 : 15.3025858341471); (14.125 : 15.3025858341471)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Vehiculo/Vehiculo_Alertas_Recordatorios_Por_Km" />
+      <nodes>
+        <classShapeMoniker Id="53413db5-9fc6-4eec-82a0-b5368b5ec404" />
+        <classShapeMoniker Id="0afaadb8-fc9f-4647-ae75-ec1542ebe7dd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.375 : 9.51561157226562); (14.4479166666667 : 9.51561157226562 : JumpStart); (14.6145833333333 : 9.51561157226562 : JumpEnd); (14.875 : 9.51561157226562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Cliente/Cliente_Vehiculo" />
+      <nodes>
+        <classShapeMoniker Id="e9e0a815-a88e-4ada-84b5-860096e93e5e" />
+        <classShapeMoniker Id="53413db5-9fc6-4eec-82a0-b5368b5ec404" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.875 : 11.4431062825521); (18.2864583333333 : 11.4431062825521 : JumpStart); (18.0104166666667 : 11.4431062825521 : JumpEnd); (16.875 : 11.4431062825521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Tipos_Usos_Moviles/Tipos_Usos_Moviles_Vehiculo" />
+      <nodes>
+        <classShapeMoniker Id="c6437cc8-443f-4113-9dca-4dc3a7a74a27" />
+        <classShapeMoniker Id="53413db5-9fc6-4eec-82a0-b5368b5ec404" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.53125 : 3.2612939453125); (14.53125 : 11.1097639973958); (14.875 : 11.1097639973958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesGPSDataContext/Tipos_Vehiculos/Tipos_Vehiculos_Vehiculo" />
+      <nodes>
+        <classShapeMoniker Id="9416b505-7da2-4aee-9d8a-27b7794214db" />
+        <classShapeMoniker Id="53413db5-9fc6-4eec-82a0-b5368b5ec404" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

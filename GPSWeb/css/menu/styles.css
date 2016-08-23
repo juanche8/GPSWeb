@@ -1,0 +1,79 @@
+#ja-container .breadcrumbs {display: none;}
+#ja-container .componentheading { display: none; }
+
+.ondemand {
+	padding: 50px;
+}
+.ondemand form, .ondemand .form {
+	padding: 15px;
+	border: 2px solid black;
+	border-radius: 5px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+.ondemand form fieldset {
+	text-align: left;
+}
+.ondemand form label {
+	font-size: 14px;
+	line-height: 14px;
+	color: #666;
+	margin-bottom: 2px;
+}
+.ondemand form .inputbox, .ondemand form .button {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+/* Google signon */
+.g-signOn {
+	padding: 5px 15px;
+}
+            
+.g-signOn img{
+	vertical-align: middle;
+}          
+
+/* Signup page styles */
+
+.vtigersignup .formContainer li {
+	background-image: none;
+	clear: both;
+	list-style: none outside none;
+	padding: 5px;
+	position: relative;
+}
+.vtigersignup .formContainer .rsform-input-box,
+.vtigersignup .formContainer .rsform-password-box{
+	margin-bottom: 0;
+	padding: 8px;
+	width: 300px
+}
+.vtigersignup .formContainer .rsform-block-name input[type="text"]{
+	width: 140px !important;
+	display: inline-block;
+}
+.vtigersignup .formContainer select{
+	height: 38px;
+	width: 196px;
+	border-radius: 0 4px 4px 0;
+	padding: 10px;
+	vertical-align: top;
+	width: 196px;
+	margin-bottom: 0;
+}
+.vtigersignup .formContainer .serverTitle{
+	height: 20px;
+	line-height: 18px;
+	padding: 8px;
+	margin-right: -10px;
+	width: 110px;
+	display: inline-block;
+	border: 1px solid #bbb;
+	border-radius: 4px;
+	background: #eee;
+}
+
+.vtigersignup #captcha {
+	display: inline-block;
+} 

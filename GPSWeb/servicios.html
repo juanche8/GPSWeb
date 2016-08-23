@@ -1,0 +1,438 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Rastreo Urbano</title>
+  <meta name="keywords" content="GPS, Sistema Rastreo, monitoreo, Argentina, Alarmas, reportes, control de flota, seguimiento de flota, seguimiento, satelital,flota, gps, seguimiento de flota,control de flota, localizacion de flota, seguimiento gps, localizacion gps, seguridad de flota, control vehicular, control de frecuencias, control de recorridos, control gps, alertas, tecnologia gps" />
+  <meta name="author" content="Super User" />
+  <meta name="description" content="Rastreo Urbano te permite monitorear tu flota en tiempo real las 24hs del día los 365 días del año. Configurar Alarmas para saber que pasa con tus autos en todo momento y obtener reportes y estadisticas de su uso. También prestamos soluciones de software y hardware  exclusivos para la necesidad de cada empresa." />
+
+    <link href="css/cslider.css" rel="stylesheet" />
+ <!-- jQuery Library -->
+<script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+    <!-- Craftyslide Plugin -->
+<script src="scripts/craftyslide.js"></script>
+
+<style type="text/css">
+    .button3{
+   
+    background-color: #FF712D;
+    border-radius: 4px;
+    text-indent: 0px;
+    border: 1px solid #FF712D;
+    display: inline-block;
+    color: White;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;    
+    font-style: normal;
+    padding: 2px 25px;
+    text-decoration: none;
+    text-align: center;
+     height:22px;
+     width:100px;
+    
+}
+.button2 {
+   
+    background-color: #A8CF45;
+    border-radius: 4px;
+    text-indent: 0px;
+    border: 1px solid #A8CF45;
+    display: inline-block;
+    color: White;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;    
+    font-style: normal;
+    padding: 12.5px 25px;
+    text-decoration: none;
+    text-align: center;
+    -webkit-transition:all 1s ease;
+   -moz-transition: ease-out 1s ease;
+   -o-transition: 1s ease;
+   transition:all 1s ease;
+   transition-property: all;
+   }
+.button2:hover {
+	background-color:#f60;
+	color:#FFF;
+	}
+#menu ul li a {
+	font-family: Helvetica, sans-serif, "Gill Sans MT";
+}
+#menu ul li a 
+{
+	border-right: 1px solid #000000;
+border-left: 1px solid #4d4e50;
+	list-style-type: none;
+	width: 160px;
+}
+
+a:link {
+	text-decoration: none;
+	color: #FFF;
+}
+a:visited {
+	text-decoration: none;
+	color: #FFF;
+}
+a:hover {
+	text-decoration: none;
+	color: #F60;
+}
+a:active {
+	text-decoration: none;
+	color: #FFF;
+}
+#menu {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0;
+	background-color: #C95601;
+		 } 
+		
+#menu ul { list-style: inside; 
+           margin: 0; padding:5px; 
+		   } 
+		   
+#menu ul li 
+{
+	
+	 display: inline; 
+              margin: 0px; 
+			  } 
+
+#menu ul li a {
+	height: 33px;
+	display: block;
+	float: left;
+	padding: 10px 10px 0px 10px;
+	color: #FFF;
+	text-decoration: none;
+	font-size: 13px;
+				} 
+
+.menuButton {
+  position: relative;
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  -webkit-transition-property: background-color, color;
+  -webkit-transition-duration: 1s;
+  -o-transition-property: background-color, color;
+  -o-transition-duration: 1s;
+  text-align: center;
+  background-color:#333;
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  
+
+}
+
+.menuButton:hover {
+  position: relative;
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  -webkit-transition-property: background-color, color;
+  -webkit-transition-duration: 1s;
+  -o-transition-property: background-color, color;
+  -o-transition-duration: 1s;
+  background-color:#F60;
+  font-color:#222;
+  -moz-box-shadow: 2px 2px 1px black;
+}				
+
+#submenu1 {
+    width: auto;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	margin-left: 0px;
+}
+#submenu1 ul {
+	margin-top: 10px;
+	font-family: Helvetica, sans-serif, "Gill Sans MT";
+	font-size: 12px;
+	text-decoration: none;
+	list-style-type: none;
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+	display: block;
+	line-height: 35px;
+	border-right-width: 3px;
+	border-right-style: solid;
+	border-right-color: #fff;
+	
+	}
+	.menuButton2 {
+
+  transition-property: color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  -webkit-transition-property:color;
+  -webkit-transition-duration: 1s;
+  -o-transition-property: color;
+  -o-transition-duration: 1s;
+  text-align: center;
+  color: #06C;
+  font-family: sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  
+
+}
+.menuButton3 {
+
+  transition-property: color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  -webkit-transition-property:color;
+  -webkit-transition-duration: 1s;
+  -o-transition-property: color;
+  -o-transition-duration: 1s;
+  text-align: center;
+  color: #06C;
+  font-family: sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  
+
+}
+#submenu1 {
+    width: auto;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	margin-left: 0px;
+}
+#submenu1 ul {
+	margin-top: 10px;
+	font-family: Helvetica, sans-serif, "Gill Sans MT";
+	font-size: 12px;
+	text-decoration: none;
+	list-style-type: none;
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+	display: block;
+	line-height: 30px;
+	border-right-width: 3px;
+	border-right-style: solid;
+	border-right-color: #999;
+	color: #FFF;
+	}
+    
+h1 {
+	font-size: xx-large;
+}
+
+html, body {
+	border:0; 
+	margin:0; 
+	padding:0; 
+	height:auto;
+	font-size:100%;
+	width:auto;
+	 
+}
+.cotizarlista{
+background-color: #333;
+color: #fff;
+border: none;
+width: 200px;
+margin-left: 10px;
+margin-top: 0;
+color: #fff;
+border: none;
+width: 90%;
+margin-left: 10px;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+height: 31px;
+padding-top: 0;
+padding-bottom: 0;
+border-radius: 0;
+margin-top: -5px;
+	}
+#SubmitButton {
+width: 88%;
+float: none;
+cursor: pointer;
+background-color:#543 
+color: #fff;
+text-align: left;
+margin-left: 14px;
+margin-bottom: 20px;
+}
+
+</style></head>
+
+<body>
+<div id="header" style="background-color:#FFF; height:81px; clear:both; width:100%">
+  <div style="float: right; height:auto; width: 350px; font-family: Helvetica, sans-serif, 'Gill Sans MT'; font-size: 12px; margin-top: 5px; margin-right:40px;margin-bottom: 0;"> <span><b>RASTREO URBANO</b> - Sistema de Monitoreo Satelital<br />
+    </span>
+    <div class="acceso">
+     <a href="javascript:location.href='login.aspx';" class="button2">ACCESO A CLIENTES</a></div>
+  </div>
+  <div id="logo" style="height:81px; width:220px; margin-top:1%; margin-left:10%; margin-bottom:1%"><a href="index.html"><img src="img/rastreo-urbano-logo.png" width="220" height="81"  alt="Rastero Urbano"/></a></div>
+
+
+</div>
+
+<div id="menu" style="background-color:#333; color:#FFF;clear:both;">
+<div style="width:100%; height:48px;">
+<ul style="margin:0 auto;margin-left:15%; width:80%;">
+  <li><a class="menuButton" href="index.html" >HOME</a></li>
+  <li><a class="menuButton" href="productos.htm">PRODUCTOS</a></li>
+   <li><a class="menuButton" href="servicios.html">SERVICIOS</a></li>
+  <li><a class="menuButton" href="Soluciones.html">SOLUCIONES A EMPRESAS</a></li>
+  <li><a class="menuButton" href="Contacto.html">CONTACTO</a></li>
+ 
+</ul></div>
+  
+</div>
+<div id="box" style="background-color: #FFF; clear: both; font-family: Helvetica, sans-serif, 'Gill Sans MT'; color: #B84237;">
+
+ <div id="blanco" style="height:auto; width:auto;">
+   <div style="clear: both">
+     
+   </div>
+<div style="width:80%; margin-right:0px;margin-left:15%; font-size:12px; ">
+  <h1>SERVICIOS  </h1>
+</div>
+   <div style=" width:60%;margin-right:20%; margin-left:22%">
+     <p><img src="img/img serv/serv-1.png" width="900" height="138" /></p>
+     <p>&nbsp;</p>
+   </div>
+
+ <div style="margin-left:17%; width:65%; text-align:justify; clear:both">
+   <h2>Servicios a flotas y particulares
+   </h2>
+   <p><strong>Rastreo Satelital Vehicular</strong> <strong>/</strong> <strong>Servicios  a flotas y particulares</strong></p>
+   <p style="color:#333">  Ud podrá visualizar en tiempo real las 24 horas del día los 365 días del año desde cualquier parte del mundo la ubicación exacta, y controlar a través de reglas , indicadores y sensores, el estado del vehículo y la forma de uso por parte de su conductor.</p>
+   <p style="color:#333">&nbsp;</p>
+ </div>
+ <div style="width: 100%; height: 50px; background-color:#f60; color: #FFF; font-size: xx-large; padding-top: 15px; font-weight: bold; text-align: center;">TECNOLOGIA GPS A TU DISPOSICIÓN</div>
+<div style="margin-left:17%; width: 85%px; height: 100%; color: #333;">
+
+<div style="width: 75%; text-align: justify; color: #777; clear: both; font-weight: normal;">
+<div style="float:left ;margin-top:5%;margin-right:2%; width:120px; height:78px;"><img x src="img/img serv/particulares_s.png" width="119" height="77" /></div>
+  <p style="color: #666; font-size: xx-large;">PARTICULARES</p>
+  
+  <p style="color:#B84237"><strong>Cuidamos a sus seres más queridos</strong></p>
+  <p> Rastreo urbano le da la posibilidad de obtener en tiempo real la ubicación de su vehículo, poder generar reportes de los recorridos realizados, establecer reglas de uso fuera de horario, zonas peligrosas, zonas permitidas,  y recibir alarmas por remolque, robo de neumáticos, inhibición del motor ante robo, pulsador de pánico y mucho más. </p>
+  <p>&nbsp;</p>
+</div>
+<div  style="float:left ;margin-right:2%;margin-top:2%; width:119px; height:121px">
+  <p><img src="img/img serv/reparto_s.png" width="112" height="97" /></p>
+</div>
+<div style=" width:75%; text-align:justify;">
+  <p style="color: #666; font-size: xx-large;">LOGISTICA Y REPARTO</p>
+  <p  style="color:#B84237"><strong>Le  brindamos todas las herramientas necesarias para optimizar su productividad  logística</strong></p>
+  <p>
+    Rastreo urbano le da el beneficio de obtener detalladamente el horario exacto de partida y llegada a los puntos establecidos como destino, proveedor, cliente, empresa, etc , Podrá también recibir alarmas por demoras, tiempos ociosos, y una gama completa de sensores que lo mantendrán al tanto de cualquier tipo de imprevisto.</p>
+  <p>&nbsp;</p>
+</div>
+<div  style="float:left ;margin-right:2%;margin-top:2%; width:119px; height:111px">
+  <p><img src="img/img serv/transporte_publico_s.png" width="120" height="74" /></p>
+</div>
+ <div style=" width:75%; text-align:justify;">
+   <p  style="color: #B84237; font-weight: bold;"><p style="color: #666; font-size: xx-large; font-weight: normal;">TRANSPORTE PUBLICO</p>
+   <p  style="color: #B84237; font-weight: bold;">Cuidamos  su capital y le brindamos herramientas para el control de su flota</p>
+   <p>
+     Con Rastreo Urbano usted ahora puede minimizar costos de mantenimiento y optimizar los tiempos productivos, obteniendo reportes detallados e indicadores que le informarán sobre los excesos , mal uso de sus vehículos, controlar  tiempos ociosos  y prevenir desperfectos. </p>
+   <p>&nbsp;</p>
+ </div>
+<div  style="float:left ;margin-right:1%;margin-top:2%; width:130px; height:120px">
+  <p><img src="img/img serv/larga Distancia_s.png" width="127" height="95" /></p>
+</div>
+<div style=" width:75%; text-align:justify;">
+  <p  style="color: #B84237; font-weight: bold;"><p style="color: #666; font-size: xx-large; font-weight: normal; text-align:left">TRANSPORTE DE LARGA DISTANCIA</p> </p>
+  <p  style="color: #B84237; font-weight: bold;">Toda la información necesaria para minimizar costos y maximizar sus ganancias</p>
+  <p>
+    Con  Rastreo Urbano usted tendrá el control exacto sobre los itinerarios de partida  y de llegada de sus unidades, paradas imprevistas, desperfectos técnicos y  mucho más,  agregando un eslabón más a su  cadena de valor, convirtiendo este diferencial en su ventaja competitiva.</p>
+  <p>&nbsp;</p>
+</div>
+<div  style="float:left ;margin-right:2%;margin-top:2%; width:119px; height:111px">
+  <p><img src="img/img serv/rural_s.png" width="117" height="87" /></p>
+</div>
+<div style=" width:75%; text-align:justify;">
+  <p  style="color:#B84237;color: #666; font-size: xx-large; font-weight: normal;">MAQUINARIA RURAL</p>
+  <p  style="color:#B84237"><strong>Control  absoluto de su capital, su producción y sus empleados</strong></p>
+  <p>Rastreo Urbano le ofrece la posibilidad de  visualizar el seguimiento y tener el control de sus máquinas rurales y  agrícolas desde sus casa, su viaje de negocios o desde cualquier parte del  mundo en el instante que usted lo desee. Además tiene la posibilidad de ver el  estado de los múltiples y diversos sensores disponibles, ver recorridos  históricos, generar reglas de uso y mucho más.</p>
+  <p>&nbsp;</p>
+  
+</div>
+</div>
+   
+   <div style="clear: both"></div>
+
+</div>
+<div style="width:100%; height:5px;background: #F60;"></div>
+   
+</div>
+     <div style="clear: both"></div>
+<div id="footer" style="background-color: #333; height: 250px; width: 100%; font-family: Helvetica, sans-serif, 'Gill Sans MT'; color: #FFF;">
+
+<div style="margin-left:10%">
+  <div id="submenu1" style=" width:205px; height:150px; padding-top:20px; margin-right:10px; float:left; ">
+  <ul>
+    
+    <li><a class="menuButton2" href="quienes somos.htm">Quienes Somos?</a></li>
+       <li><a class="menuButton2" href="#">Proba la Demo</a></li>
+    <li><a class="menuButton2" href="#">Contactanos</a></li>
+    
+  </ul>  
+  </div>
+  
+  <div id="submenu1" style=" width:190px; height:150px; padding-top:20px; margin-right:0px;float:left;">
+  <ul>
+  
+    <li><a class="menuButton2" href="productos.htm">Productos</a></li>
+    <li><a class="menuButton2" href="#">Servicios</a></li>
+    <li><a class="menuButton2" href="Soluciones.html">Soluciones a Empresas</a></li>
+  </ul>   
+        
+  </div>
+  <div id="submenu1" style=" width:160px; height:150px; padding-top:20px; float:left; margin-right:0px; margin-left:0px;">  <ul>   
+    <li><a class="menuButton2" href="#">Noticias</a></li>    
+    <li><a class="menuButton2" href="#">Promociones</a></li>
+    <li><a class="menuButton2" href="Login.aspx">Area Clientes</a></li>
+    <li></li>
+  </ul> 
+  </div>
+     <div style=" width:auto; height:auto; padding-top:20px; float:right; margin-right:20%; margin-left:0%;"> <a href="https://www.facebook.com/rastreourbanogps?fref=ts"><img alt="Facebook" style="width: 31px;height: 31px;" src="img/iconos/nueva_web_fc.png" /></a>&nbsp;
+   <img alt="Mail" style="width: 31px;height: 31px;" src="img/iconos/nueva_web_mailc.png" />&nbsp;&nbsp;
+         <br /><br />
+         <span style="font-size:12px">Tel.: 11-4356-3245</span><br />
+         <span style="font-size:12px">
+         e-mail.: ventas@rastreourbano.com.ar</span><br />
+          <span style="font-size:12px">
+         Buenos Aires, Argentina</span>
+    </div>
+  </div>
+  <div style="height: auto; width: 50%; color: #FFF; font-family: Helvetica, sans-serif, 'Gill Sans MT'; font-size: 11px; font-style: italic; float:left; margin-top:50px; padding-left:30%; margin-bottom:10px;">Rastreo Urbano 2014 Todos los derechos reservados - Realizado por C&C Sistemas y Diseño</div>
+</div>
+
+   <script>
+       $("#slideshow").craftyslide({
+           'width': 1000,
+           'height': 330,
+           'pagination': false
+
+
+       });
+
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Rastreo Urbano</title>
+  <meta name="keywords" content="GPS, Sistema Rastreo, monitoreo, Argentina, Alarmas, reportes, control de flota, seguimiento de flota, seguimiento, satelital,flota, gps, seguimiento de flota,control de flota, localizacion de flota, seguimiento gps, localizacion gps, seguridad de flota, control vehicular, control de frecuencias, control de recorridos, control gps, alertas, tecnologia gps" />
+  <meta name="author" content="Super User" />
+  <meta name="description" content="Rastreo Urbano te permite monitorear tu flota en tiempo real las 24hs del día los 365 días del año. Configurar Alarmas para saber que pasa con tus autos en todo momento y obtener reportes y estadisticas de su uso. También prestamos soluciones de software y hardware  exclusivos para la necesidad de cada empresa." />
+
+    <link href="css/cslider.css" rel="stylesheet" />
+ <!-- jQuery Library -->
+<script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+    <!-- Craftyslide Plugin -->
+<script src="scripts/craftyslide.js"></script>
+
+<style type="text/css">
+#menu ul li a {
+	font-family: Helvetica, sans-serif, "Gill Sans MT";
+}
+#menu ul li a {
+	list-style-type: none;
+}
+
+a:link {
+	text-decoration: none;
+	color: #FFF;
+}
+a:visited {
+	text-decoration: none;
+	color: #FFF;
+}
+a:hover {
+	text-decoration: none;
+	color: #F60;
+}
+a:active {
+	text-decoration: none;
+	color: #FFF;
+}
+#menu {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #C95601;
+		 } 
+		
+#menu ul { list-style: inside; 
+           margin: 0; padding:10px; 
+		   } 
+		   
+#menu ul li { display: inline; 
+              margin: 0px; 
+			  } 
+
+#menu ul li a {
+	height: 33px;
+	display: block;
+	float: left;
+	padding: 10px 10px 0px 10px;
+	color: #FFF;
+	text-decoration: none;
+	font-size: 13px;
+				} 
+
+.menuButton {
+  position: relative;
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  -webkit-transition-property: background-color, color;
+  -webkit-transition-duration: 1s;
+  -o-transition-property: background-color, color;
+  -o-transition-duration: 1s;
+  text-align: center;
+  background-color:#333;
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  
+
+}
+
+.menuButton:hover {
+  position: relative;
+  transition-property: background-color, color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  -webkit-transition-property: background-color, color;
+  -webkit-transition-duration: 1s;
+  -o-transition-property: background-color, color;
+  -o-transition-duration: 1s;
+  background-color:#F60;
+  font-color:#222;
+  -moz-box-shadow: 2px 2px 1px black;
+}				
+
+#submenu1 {
+    width: auto;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	margin-left: 0px;
+}
+#submenu1 ul {
+	margin-top: 10px;
+	font-family: Helvetica, sans-serif, "Gill Sans MT";
+	font-size: 12px;
+	text-decoration: none;
+	list-style-type: none;
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+	display: block;
+	line-height: 30px;
+	border-right-width: 3px;
+	border-right-style: solid;
+	border-right-color: #fff;
+	}
+	.menuButton2 {
+
+  transition-property: color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  -webkit-transition-property:color;
+  -webkit-transition-duration: 1s;
+  -o-transition-property: color;
+  -o-transition-duration: 1s;
+  text-align: center;
+  color: #06C;
+  font-family: sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  
+
+}
+.menuButton3 {
+
+  transition-property: color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  -webkit-transition-property:color;
+  -webkit-transition-duration: 1s;
+  -o-transition-property: color;
+  -o-transition-duration: 1s;
+  text-align: center;
+  color: #06C;
+  font-family: sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  
+
+}
+#submenu1 {
+    width: auto;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	margin-left: 0px;
+}
+#submenu1 ul {
+	margin-top: 10px;
+	font-family: Helvetica, sans-serif, "Gill Sans MT";
+	font-size: 12px;
+	text-decoration: none;
+	list-style-type: none;
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+	display: block;
+	line-height: 30px;
+	border-right-width: 3px;
+	border-right-style: solid;
+	border-right-color: #999;
+	color: #FFF;
+	}
+    
+h1 {
+	font-size: 30px;
+}
+
+html, body {
+	border:0; 
+	margin:0; 
+	padding:0; 
+	height:auto;
+	font-size:100%;
+	width:auto;
+	 
+}
+
+</style></head>
+
+<body>
+<div id="header" style="background-color:#FFF; height:100px; clear:both; width:100%">
+<div style="float: right; height:auto; width: 350px; font-family: Helvetica, sans-serif, 'Gill Sans MT'; font-size: 12px; margin-top: 10px; margin-right:40px;margin-bottom: 10px;">
+ 
+  <a href="https://www.facebook.com/rastreourbanogps"><img alt="Facebook" style="width: 31px;height: 31px;" src="img/iconos/nueva_web_fbb.png" border="0" /></a>&nbsp;
+   <img alt="Facebook" style="width: 31px;height: 31px;" src="img/iconos/nueva_web_mailb.png" />&nbsp;&nbsp;
+     <br /><br />
+   <span><b>RASTREO URBANO</b> - Sistema de Monitoreo Satelital</span>
+   <br />
+   <span style="font-size:12px">Tel.: 11-4356-3245</span>
+         <span style="font-size:12px">
+         &nbsp;e-mail.: ventas@rastreourbano.com.ar</span><br /><br />
+         <a href="login.aspx"><span style="color:#F60; font-weight:bold"> ACCESO AREA CLIENTES</span></a>
+</div>
+
+<div id="logo" style="height:100px; width:220px; margin-top:2%; margin-left:10%"><img src="img/rastreo-urbano-logo.png" width="220" height="81"  alt="Rastero Urbano"/></div>
+
+
+</div>
+
+<div id="menu" style="background-color:#333; color:#FFF;clear:both;">
+<div style="width:100%; height:55px;">
+<ul style=" list-style-type: none; margin-right:0%;margin-left:32%">
+  <li><a class="menuButton" href="#" >HOME</a></li>
+  <li><a class="menuButton" href="#">PRODUCTOS</a></li>
+   <li><a class="menuButton" href="#">SERVICIOS</a></li>
+  <li><a class="menuButton" href="#">SOLUCION A EMPRESAS</a></li>
+  <li><a class="menuButton" href="#">CONTACTO</a></li>
+ 
+</ul></div>
+  
+</div>
+<div id="box" style="background-color: #FFF; clear: both; font-family: Helvetica, sans-serif, 'Gill Sans MT'; color: #B84237;">
+ <div id="slideshow">
+        
+  <ul id="slider1">
+       <li>
+          <img src="img/rastreo-urbano-camiones.png" width="1000" height="375" alt="leopardo" title=""/>
+    </li>
+      <li>
+          <img src="img/rastreo-urbano-modulos.png" width="1000" height="375" alt="mono_caraya" title=""/>
+    </li> 
+       <li>
+          <img src="img/rastreo-urbano-web.png" width="1000" height="375" alt="oso_hormiguero" title=""/>
+    </li>
+      
+        <li>
+          <img src="img/rastreo-urbano-autos.png" width="1000" height="375" alt="carpincho" title=""/>
+    </li>
+  
+     
+       
+  </ul>
+</div>
+<div id="blanco" style="height:auto; width:auto;"> 
+<div style="width:100%; height:5px;background: #F60;"></div>
+ <div style="clear: both"></div>
+ <br />
+ <div style="width:100%; margin-right:0px; font-size:12px; ">
+  <div style="float: left; width: 20%; margin-left:3%;color:#333; font-family:Verdana; ">
+  <h4>Emprendedores</h4>
+<p>Inicie su propio negocio, sea un distribuidor de <span style="color:#F60;">Rastreo Urbano</span></p>
+</div>
+   <div style="float: left;margin-left:3%;color:#333; font-family:Verdana; width: 20%;">
+   <h4>Sos dueño de un taller mecánico? </h4>
+  <p>Agrandá tu negocio generando mayores ingresos! Súmate a la red de instaladores de dispositivos de <span style="color:#F60;">Rastreo Urbano</span>.</p> </div>
+<div style="float: left; margin-left:3%;color:#333; font-family:Verdana; width: 20%;">
+   <h4> Aprovecha esta promo!!</h4>
+   <p>30% de descuento en instalación y primer mes bonificado.</p>   <span style="color:#F60;">Pedí tu cotización</span></div>
+   <div style="float: left; margin-left:3%;color:#333; font-family:Verdana; width: 20%;">
+   <h4>Contactanos</h4>
+   <table>
+   <tr><td >Cotizar</td></tr>
+    <tr><td><input type="text" /></td></tr>
+     <tr><td><input type="text" /></td></tr>
+      <tr><td><input type="text" /></td></tr>
+       <tr><td><input type="text" /></td></tr>
+     <tr><td><input type="text" /></td></tr>
+     <tr><td><input type="button" value="Enviar" /></td></tr>
+   </table>
+ </div>
+     <div style="clear: both"></div>
+ </div>
+ <br />
+ <div style="width:100%; height:5px;background: #F60;"></div>
+    <h2 style="margin-left:10%">RASTREO URBANO</h2>
+   <div style="float: left; width: 30%; margin-left:5%;color:#333; font-family:Verdana; ">
+  
+    <p style="text-align:justify">Te permite monitorear tu flota en tiempo real las 24hs del día los 365 días del año. Configurar Alarmas para saber que pasa con tus autos en todo momento y obtener reportes y estadisticas de su uso. Recibi notificaciones de alarmas por email  y recordatorios de servicios y trámites.</p>
+    <p> También prestamos soluciones de software y hardware  exclusivos para la necesidad de cada empresa.</p>
+    <p>Nuestros equipos cuentan con diversos sensores y botón de panico, configurables a las necesidades de cada flota. Te ayudamos y asesoramos en la puesta en marcha del sistema. </p>
+    <p style="color:#F60;"><b>Consultanos y proba la Demo Gratis!</b></p>
+     </div>
+   <div style="float:left;  padding-top:30px;margin-left:5%;"><img src="img/rastreo-urbano-consola-web2.png"  alt="Consola"/>
+    <h1 style="margin-left:25%">Instalación a Domicilio</h1></div>
+   <div style="clear: both"></div>
+    
+  
+  <p>&nbsp;</p>
+</div>
+<div id="naranja" style="font-size: 16px; background: #F60; color: #FFFFFF;">
+ <div style="margin-top: 30px; margin-left: 20%; margin-right: 20%; font-size: 16px; text-align:center; padding:25px"> <p style="font-size:32px">CÓMO FUNCIONA NUESTRO SERVICIO?
+  </p>
+   <p>Administrá tu flota, inventario y personal y asegurá el máximo rendimiento de tu empresa. </p>
+   <div style="width:auto; height:201px; margin-top: 20px; margin-bottom:20px;clear:both;">
+     <div id="iconogrande1" style="width: 20%; height: 100%; float: left; margin-left:5%;margin-right:5%; text-align: center;"><img src="img/como_auto.png" border="0" width="111" height="138" alt="habitaciones"  />
+       <p>Nuestros Servicios</p>
+     </div>
+     <div id="iconogrande2" style="width: 20%; height: 100%; float: right; margin-right: 40px; text-align: center; font-size: 14px;"><img alt="mapa" src="img/como_solucion.png" width="110" height="138" border="0" />
+       <p>Busca la mejor solución<br />
+         para tu empresa </p>
+     </div>
+     <div id="iconogrande3" style="width: 20%; height: 100%; float: right; margin-right:15%; text-align: center;"><a href="#"><img src="img/como_video.png" width="111" height="138" border="0" alt="Reservas"/></a>
+       <p>Video Demostración</p>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+<div id="footer" style="background-color: #333; height: 250px; width: 100%; font-family: Helvetica, sans-serif, 'Gill Sans MT'; color: #FFF;">
+
+<div style="margin-left:10%"><div id="submenu1" style=" width:205px; height:150px; padding-top:20px; margin-right:10px; float:left; ">
+  <ul>
+    
+    <li><a class="menuButton2" href="#">Quienes Somos?</a></li>
+       <li><a class="menuButton2" href="#">Proba la Demo</a></li>
+    <li><a class="menuButton2" href="#">Contactanos</a></li>
+    
+  </ul>  
+  </div>
+  
+  <div id="submenu1" style=" width:190px; height:150px; padding-top:20px; margin-right:0px;float:left;">
+  <ul>
+  
+    <li><a class="menuButton2" href="#">Productos</a></li>
+    <li><a class="menuButton2" href="#">Servicios</a></li>
+    <li><a class="menuButton2" href="#">Soluciones a Empresas</a></li>
+  </ul>   
+        
+  </div>
+  <div id="submenu1" style=" width:160px; height:150px; padding-top:20px; float:left; margin-right:0px; margin-left:0px;">  <ul>   
+    <li><a class="menuButton2" href="#">Noticias</a></li>    
+    <li><a class="menuButton2" href="#">Promociones</a></li>
+    <li><a class="menuButton2" href="Login.aspx">Area Clientes</a></li>
+    <li></li>
+  </ul> 
+  </div>
+     <div style=" width:auto; height:auto; padding-top:20px; float:right; margin-right:20%; margin-left:0%;"> 
+         <img alt="Facebook" style="width: 31px;height: 31px;" src="img/iconos/nueva_web_fc.png" />&nbsp;
+   <img alt="Mail" style="width: 31px;height: 31px;" src="img/iconos/nueva_web_mailc.png" />&nbsp;&nbsp;
+         <br /><br />
+         <span style="font-size:12px">Tel.: 11-4356-3245</span><br />
+         <span style="font-size:12px">
+         e-mail.: ventas@rastreourbano.com.ar</span><br />
+          <span style="font-size:12px">
+         Buenos Aires, Argentina</span>
+    </div>
+  </div>
+  <div style="height: auto; width: 1000px; color: #FFF; font-family: Helvetica, sans-serif, 'Gill Sans MT'; font-size: 11px; font-style: italic; float:left; margin-top:50px; padding-left:37%; margin-bottom:10px;">Todos los derechos reservados - Realizado por C&C Sistemas y Diseño - 2014</div>
+</div>
+
+   <script>
+       $("#slideshow").craftyslide({
+           'width': 1000,
+           'height': 375,
+           'pagination': true
+
+
+       });
+
+    
+</script>
+</body>
+</html>
